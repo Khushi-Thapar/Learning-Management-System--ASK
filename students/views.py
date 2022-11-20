@@ -7,4 +7,5 @@ def index(request):
     return render(request, 'studentdashboard.html')
 
 def studentcourse(request):
-    return render(request, 'stucourse.html')
+    # return render(request, 'stucourse.html')
+    return HttpResponse("hello world")
