@@ -1,38 +1,44 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Educenter - Education HTML Template</title>
+  <title>RCED HOMEPAGE</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Construction Html5 Template">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="author" content="Themefisher">
-  <meta name="generator" content="Themefisher Educenter HTML Template v1.0">
+  <meta name="author" content="RCED">
+  <meta name="generator" content="RCED v1.0">
   <meta name="theme-name" content="educenter" />
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
   <!-- slick slider -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
   <!-- themefy-icon -->
-  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
   <!-- animation css -->
-  <link rel="stylesheet" href="plugins/animate/animate.css">
+  <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
   <!-- aos -->
-  <link rel="stylesheet" href="plugins/aos/aos.css">
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
   <!-- venobox popup -->
-  <link rel="stylesheet" href="plugins/venobox/venobox.css">
+  <link rel="stylesheet" href="{%  static 'plugins/venobox/venobox.css' %}">
+
   <!-- Main Stylesheet -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
   <!--Favicon-->
-  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="{% static 'logo.png' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'logo.png' %}" type="image/x-icon">
+
 </head>
+
 <body>
   <!-- preloader start -->
   <div class="preloader">
-    <img src="images/preloader.gif" alt="preloader">
+    <img src="{% static 'images/preloader.gif' %}" alt="preloader">
   </div>
   <!-- preloader end -->
+
 
 <!-- header -->
 <header class="fixed-top header">
@@ -61,7 +67,7 @@
   <div class="navigation w-100">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark p-0">
-        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+        <a class="navbar-brand" href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
         <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
           aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -123,7 +129,7 @@
               <a class="nav-link" href="courses.html">Courses</a>
             </li>
             <li class="nav-item @@blog">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="#footer">Contact</a>
             </li>
           </ul>
         </div>
@@ -197,7 +203,7 @@
 </div>
 
 <!-- hero slider -->
-<section class="hero-section overlay bg-cover" data-background="images/banner/banner-1.jpg">
+<section class="hero-section overlay bg-cover" data-background="{% static 'images/banner/banner-1.jpg' %}">
   <div class="container">
     <div class="hero-slider">
       <!-- slider item -->
@@ -207,7 +213,7 @@
             <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">Empowering the youth since 1995</h1>
             <p class="text-muted mb-4" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".4"> We have been providing Career Guidance, Skill Training and Entrepreneurship Development Services for 25 years now in association with various Government Departments, Institutions and Corporates. 
             </p>
-            <a href="contact.html" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Learn More</a>
+            <a href="#footer" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Learn More</a>
           </div>
         </div>
       </div>
@@ -218,7 +224,7 @@
             <h1 class="text-white" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">Our Workflow Process</h1>
             <p class="text-muted mb-4" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".4">We follow a systematic process that is divided into four phases namely Mobilization and Selection, Training and Assessmnet, Placement and then Follow-up. Continuous reporting is done to the sponsoring organization at all the stages.
             </p>
-            <a href="contact.html" class="btn btn-primary" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".7">Learn More</a>
+            <a href="#footer" class="btn btn-primary" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".7">Learn More</a>
           </div>
         </div>
       </div>
@@ -227,7 +233,7 @@
 </section>
 <!-- /hero slider -->
 <!-- success story -->
-<section class="section bg-cover" data-background="images/backgrounds/success-story.jpg">
+<section class="section bg-cover" data-background="{% static 'images/backgrounds/success-story.jpg' %}">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-sm-4 position-relative success-video">
@@ -254,7 +260,7 @@
     <!-- blog post -->
     <article class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
       <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
-        <img class="card-img-top rounded-0" src="images/blog/post-1.jpg" alt="Post thumb">
+        <img class="card-img-top rounded-0" src="{% static 'images/blog/post-1.jpg' %}" alt="Post thumb">
         <div class="card-body">
           <!-- post meta -->
           <a href="blog-single.html">
@@ -268,7 +274,7 @@
     <!-- blog post -->
     <article class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
       <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
-        <img class="card-img-top rounded-0" src="images/blog/post-2.jpg" alt="Post thumb">
+        <img class="card-img-top rounded-0" src="{% static 'images/blog/post-2.jpg' %}" alt="Post thumb">
         <div class="card-body">
           <!-- post meta -->
           <a href="blog-single.html">
@@ -283,7 +289,7 @@
     <!-- blog post -->
     <article class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
       <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
-        <img class="card-img-top rounded-0" src="images/blog/post-3.jpg" alt="Post thumb">
+        <img class="card-img-top rounded-0" src="{% static 'images/blog/post-3.jpg' %}" alt="Post thumb">
         <div class="card-body">
           <!-- post meta -->
           <a href="blog-single.html">
@@ -317,7 +323,7 @@
     <!-- course item -->
     <div class="col-lg-4 col-sm-6 mb-5">
       <div class="card p-0 border-primary rounded-0 hover-shadow">
-        <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+        <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
         <div class="card-body">
           <a href="course-single.html">
             <h4 class="card-title"> Pre-departure Orientation Training (PDOT)</h4>
@@ -329,7 +335,7 @@
     <!-- course item -->
     <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+          <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
             <a href="course-single.html">
               <h4 class="card-title"> Petroleum Conservation Research Association (PCRA)</h4>
@@ -341,7 +347,7 @@
     <!-- course item -->
     <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+          <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
             <a href="course-single.html">
               <h4 class="card-title"> Khadi and Village Industries Commisiion (KVIC)</h4>
@@ -353,7 +359,7 @@
     <!-- course item -->
     <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+          <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
             <a href="course-single.html">
               <h4 class="card-title"> DAY-NULM under Municipal Corporation Chandigarh</h4>
@@ -365,7 +371,7 @@
     <!-- course item -->
     <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+          <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
             <a href="course-single.html">
               <h4 class="card-title"> IRCON Sponsored Skill Training Programs</h4>
@@ -377,7 +383,7 @@
     <!-- course item -->
     <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+          <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
             <a href="course-single.html">
               <h4 class="card-title"> Pre-departure Orientation Training</h4>
@@ -407,7 +413,7 @@
           <a href="about.html" class="btn btn-outline-primary">Learn more</a>
         </div>
         <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
-          <img class="img-fluid w-100" src="images/about/about-us.jpg" alt="about image">
+          <img class="img-fluid w-100" src="{% static 'images/about/about-us.jpg' %}" alt="about image">
         </div>
       </div>
     </div>
@@ -420,7 +426,7 @@
           <div class="row">
             <div class="col-md-3 col-sm-6 ts-facts">
                 <div class="ts-facts-img">
-                  <img loading="lazy" src="images/icon-image/fact1.png" alt="facts-img">
+                  <img loading="lazy" src="{% static 'images/icon-image/fact1.png' %}" alt="facts-img">
                 </div>
                 <div class="ts-facts-content">
                   <h2 class="ts-facts-num"><span class="counterUp" data-count="20000">0</span></h2>
@@ -430,7 +436,7 @@
   
             <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-sm-0">
                 <div class="ts-facts-img">
-                  <img loading="lazy" src="images/icon-image/fact2.png" alt="facts-img">
+                  <img loading="lazy" src="{% static 'images/icon-image/fact2.png' %}" alt="facts-img">
                 </div>
                 <div class="ts-facts-content">
                   <h2 class="ts-facts-num"><span class="counterUp" data-count="19550">0</span></h2>
@@ -440,7 +446,7 @@
   
             <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-md-0">
                 <div class="ts-facts-img">
-                  <img loading="lazy" src="images/icon-image/fact3.png" alt="facts-img">
+                  <img loading="lazy" src="{% static 'images/icon-image/fact4.png' %}" alt="facts-img">
                 </div>
                 <div class="ts-facts-content">
                   <h2 class="ts-facts-num"><span class="counterUp" data-count="50000">0</span></h2>
@@ -450,7 +456,7 @@
   
             <div class="col-md-3 col-sm-6 ts-facts mt-5 mt-md-0">
                 <div class="ts-facts-img">
-                  <img loading="lazy" src="images/icon-image/fact4.png" alt="facts-img">
+                  <img loading="lazy" src="{% static 'images/icon-image/fact4.png' %}" alt="facts-img">
                 </div>
                 <div class="ts-facts-content">
                   <h2 class="ts-facts-num"><span class="counterUp" data-count="10500">0</span></h2>
@@ -484,7 +490,7 @@
     <!-- course item -->
     <div class="col-lg-4 col-sm-6 mb-5">
       <div class="card p-0 border-primary rounded-0 hover-shadow">
-        <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+        <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
         <div class="card-body">
           <a href="course-single.html">
             <h4 class="card-title"> Management Internships</h4>
@@ -497,7 +503,7 @@
     <!-- course item -->
     <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+          <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
             <a href="course-single.html">
               <h4 class="card-title"> Skill Development</h4>
@@ -510,7 +516,7 @@
     <!-- course item -->
     <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+          <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
             <a href="course-single.html">
               <h4 class="card-title"> Entrepreneurship Development</h4>
@@ -523,7 +529,7 @@
     <!-- course item -->
     <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+          <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
             <a href="course-single.html">
               <h4 class="card-title"> Start-up Support</h4>
@@ -536,7 +542,7 @@
     <!-- course item -->
     <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+          <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
             <a href="course-single.html">
               <h4 class="card-title"> Capacity Building</h4>
@@ -549,7 +555,7 @@
     <!-- course item -->
     <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+          <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
             <a href="course-single.html">
               <h4 class="card-title"> Research and Evaluation</h4>
@@ -589,7 +595,7 @@
               <div class="inner-box text-center">
                 <div class="image-box">
                   <figure>
-                    <img loading="lazy" src="images/testimonials/1.png" alt="">
+                    <img loading="lazy" src="{% static 'images/testimonials/1.png' %}" alt="">
                   </figure>
                 </div>
                 <h6>SUNITA SHARMA</h6>
@@ -602,7 +608,7 @@
               <div class="inner-box text-center">
                 <div class="image-box">
                   <figure>
-                    <img loading="lazy" src="images/testimonials/2.png" alt="">
+                    <img loading="lazy" src="{% static 'images/testimonials/2.png' %}" alt="">
                   </figure>
                 </div>
                 <h6>RAJAT ARORA</h6>
@@ -614,7 +620,7 @@
               <div class="inner-box text-center">
                 <div class="image-box">
                   <figure>
-                    <img loading="lazy" src="images/testimonials/3.png" alt="">
+                    <img loading="lazy" src="{% static 'images/testimonials/3.png' %}" alt="">
                   </figure>
                 </div>
                 <h6>CHITESH</h6>
@@ -626,7 +632,7 @@
               <div class="inner-box text-center">
                 <div class="image-box">
                   <figure>
-                    <img loading="lazy" src="images/testimonials/1.png" alt="">
+                    <img loading="lazy" src="{% static 'images/testimonials/1.png' %}" alt="">
                   </figure>
                 </div>
                 <h6>ABHISHEK VASHISHT</h6>
@@ -638,7 +644,7 @@
               <div class="inner-box text-center">
                 <div class="image-box">
                   <figure>
-                    <img loading="lazy" src="images/testimonials/2.png" alt="">
+                    <img loading="lazy" src="{% static 'images/testimonials/2.png' %}" alt="">
                   </figure>
                 </div>
                 <h6>MEHAK CHANDOLIYA</h6>
@@ -651,61 +657,21 @@
       </div>
     </div>
   </section>
-  <!-- footer content -->
-  <div class="footer bg-footer section border-bottom">
+
+  <div class="footer bg-footer section border-bottom " id="footer">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0 ">
           <!-- logo -->
-          <a class="logo-footer" href="index.html"><img class="img-fluid mb-4" src="images/logo.png" alt="logo"></a>
+          <h3 style="color:White;">Stay In Touch</h3><br>
+          <img class="img-fluid mb-4" src="{% static 'images/logo.png' %}" alt="logo">
           <ul class="list-unstyled">
-            <li class="mb-2">23621 15 Mile Rd #C104, Clinton MI, 48035, New York, USA</li>
-            <li class="mb-2">+1 (2) 345 6789</li>
-            <li class="mb-2">+1 (2) 345 6789</li>
-            <li class="mb-2">rcedindia@gmail.com</li>
+            <li class="mb-2">SCO:315-316, Top floor, 35B, Himalaya Marg, Sector 35B, Chandigarh, 160035</li>
+            <li class="mb-2"><a class="text-color mr-3" href="tel:+911722601648">+91 172 2601648</a></li>
+            <li class="mb-2"><a class="text-color mr-3" href="tel:+911722612669">+91 172 2612669</a></li>
+            <li class="mb-2"><a class="text-color mr-3" href="tel:+919814888119">+91 9814888119</a></li>
+            <li class="mb-2"><a class="text-color mr-3" href="mailto:rcedindia@gmail.com">rcedindia@gmail.com</a></li>
           </ul>
         </div>
-        <!-- company -->
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-          <h4 class="text-white mb-5">COMPANY</h4>
-          <ul class="list-unstyled">
-            <li class="mb-3"><a class="text-color" href="about.html">About Us</a></li>
-            <li class="mb-3"><a class="text-color" href="teacher.html">Our Teacher</a></li>
-            <li class="mb-3"><a class="text-color" href="contact.html">Contact</a></li>
-            <li class="mb-3"><a class="text-color" href="blog.html">Blog</a></li>
-          </ul>
-        </div>
-        <!-- links -->
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-          <h4 class="text-white mb-5">LINKS</h4>
-          <ul class="list-unstyled">
-            <li class="mb-3"><a class="text-color" href="courses.html">Courses</a></li>
-            <li class="mb-3"><a class="text-color" href="events.html">Events</a></li>
-            <li class="mb-3"><a class="text-color" href="notice.html">Notice</a></li>
-            <li class="mb-3"><a class="text-color" href="scholarship.html">Scholarship</a></li>
-          </ul>
-        </div>
-        <!-- support -->
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-          <h4 class="text-white mb-5">SUPPORT</h4>
-          <ul class="list-unstyled">
-            <li class="mb-3"><a class="text-color" href="https://themefisher.com/blog">Forums</a></li>
-            <li class="mb-3"><a class="text-color" href="https://docs.themefisher.com/">Documentation</a></li>
-            <li class="mb-3"><a class="text-color" href="#!">Language</a></li>
-            <li class="mb-3"><a class="text-color" href="#!">Release Status</a></li>
-          </ul>
-        </div>
-        <!-- support -->
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-          <h4 class="text-white mb-5">RECOMMEND</h4>
-          <ul class="list-unstyled">
-            <li class="mb-3"><a class="text-color" href="https://themefisher.com/">WordPress</a></li>
-            <li class="mb-3"><a class="text-color" href="https://themefisher.com/">LearnPress</a></li>
-            <li class="mb-3"><a class="text-color" href="https://themefisher.com/">WooCommerce</a></li>
-            <li class="mb-3"><a class="text-color" href="https://themefisher.com/">bbPress</a></li>
-          </ul>
-        </div>
-      </div>
     </div>
   </div>
   <!-- copyright -->
@@ -717,16 +683,14 @@
             <script>
               var CurrentYear = new Date().getFullYear()
               document.write(CurrentYear)
-            </script> 
-            , designed & developed by <a href="https://themefisher.com/" class="text-muted">Themefisher</a>
+            </script>
           </p>
         </div>
         <div class="col-sm-5 text-sm-right text-center">
           <ul class="list-inline">
-            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://facebook.com/themefisher/"><i class="ti-facebook text-primary"></i></a></li>
-            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://twitter.com/themefisher"><i class="ti-twitter-alt text-primary"></i></a></li>
-            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://github.com/themefisher"><i class="ti-github text-primary"></i></a></li>
-            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://instagram.com/themefisher/"><i class="ti-instagram text-primary"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://www.facebook.com/rced.india"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://twitter.com/intent/tweet?text=Contact%20%E2%80%93%20RCED&url=https%3A%2F%2Frcedindia.com%2Fcontact%2F%23.Y2X-9ISTMXh.twitter&related="><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://instagram.com/rcedindia?igshid=YmMyMTA2M2Y="><i class="ti-instagram"></i></a></li>
           </ul>
         </div>
       </div>
@@ -736,23 +700,23 @@
 <!-- /footer -->
 
 <!-- jQuery -->
-<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
 <!-- Bootstrap JS -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
 <!-- slick slider -->
-<script src="plugins/slick/slick.min.js"></script>
+<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
 <!-- aos -->
-<script src="plugins/aos/aos.js"></script>
+<script src="{% static 'plugins/aos/aos.js' %}"></script>
 <!-- venobox popup -->
-<script src="plugins/venobox/venobox.min.js"></script>
+<script src="{% static 'plugins/venobox/venobox.min.js' %}"></script>
 <!-- filter -->
-<script src="plugins/filterizr/jquery.filterizr.min.js"></script>
+<script src="{% static 'plugins/filterizr/jquery.filterizr.min.js' %}"></script>
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
-<script src="plugins/google-map/gmap.js"></script>
+<script src="{% static 'plugins/google-map/gmap.js' %}"></script>
 
 <!-- Main Script -->
-<script src="js/script.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
 
 </body>
 </html>
