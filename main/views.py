@@ -16,3 +16,6 @@ def modifycourse(request):
 
 def modifystudent(request):
     return render(request, 'modifyStudent.html')
+
+def addstudent(request):
+    return render(request, 'addstu.html')
