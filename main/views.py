@@ -12,4 +12,7 @@ def courselist(request):
     return render(request, 'courselist.html')
 
 def modifycourse(request):
-    return render(request, 'modifyCourse.html')
+    return render(request, 'modifyCourse.html')\
+
+def modifystudent(request):
+    return render(request, 'modifyStudent.html')
