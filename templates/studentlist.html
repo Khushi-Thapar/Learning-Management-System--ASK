@@ -150,7 +150,19 @@
 <!-- /page title -->
 <br>
 <div class="student">
-<table class="table table-warning mt-2">
+    {% for Children in stu_list %}
+      <strong>{{ Children }}</strong>
+      <ul>
+        <li>Name: {{ Children.name }}</li>
+        <li>Date of Birth: {{ Children.dob }}</li>
+        <li>Email: {{ Children.email }}</li>
+        <li>Password: {{ Children.pas }}</li>
+        <li>Mobile: {{ Children.mobile }}</li>
+        <li>Address: {{ Children.add }}</li>
+      </ul>
+      <br/>
+      {% endfor %}
+<!-- <table class="table table-warning mt-2">
     <thead>
       <tr class="table-warning">
         <th scope="col">#</th>
@@ -178,7 +190,7 @@
         <td>@twitter</td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
   </div>
 <!-- footer -->
 <footer>

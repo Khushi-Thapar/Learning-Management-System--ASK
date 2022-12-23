@@ -10,7 +10,9 @@ def index(request):
     return render(request, 'Admin-home.html')
 
 def studentlist(request):
-    return render(request, 'studentlist.html')
+    stu_list= Childern.objects.all()
+    return render(request, 'studentlist.html',
+    {'stu_list':stu_list})
 
 def courselist(request):
     return render(request, 'courselist.html')
