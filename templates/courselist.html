@@ -77,16 +77,16 @@
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item @@home">
-              <a class="nav-link" href="Admin-home.html">Home</a>
+              <a class="nav-link" href="{% url 'mainIndex' %}">Home</a>
             </li>
             <li class="nav-item dropdown view">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 STUDENTS
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'addstudent' %}">Add Student</a></li>
+                <li><a class="dropdown-item" href="{% url 'modifystudent' %}">Modify Student Details</a></li>
                 <li><a class="dropdown-item" href="{% url 'studentlist' %}">View Enrolled Students</a></li>
-                <li><a class="dropdown-item" href="#">Add Student</a></li>
-                <li><a class="dropdown-item" href="#">Drop Student</a></li>
               </ul>
              </li>
             <li class="nav-item dropdown view">
@@ -94,10 +94,9 @@
                 COURSES
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="{% url 'courselist' %}">View Courses</a></li>
-                <li><a class="dropdown-item" href="#">Add Course</a></li>
-                <li><a class="dropdown-item" href="#">Drop Course</a></li>
+                <li><a class="dropdown-item" href="{% url 'addcourse' %}">Add Course</a></li>
                 <li><a class="dropdown-item" href="{% url 'modifycourse' %}">Modify Course</a></li>
+                <li><a class="dropdown-item" href="{% url 'courselist' %}">View Courses</a></li>
               </ul>
              </li>
             <li class="nav-item @@events">
@@ -106,7 +105,7 @@
             <li class="nav-item @@courses">
               <a class="nav-link" href="#logout" data-toggle="modal" data-target="#logout">LOGOUT</a>
             </li>
-        </div>
+          </ul></div>
       </nav>
     </div>
   </div>
@@ -158,13 +157,13 @@
       </tr>
     </thead>
     <tbody>
-      {% for Children in stu_list %}
+      {% for Course in course_list %}
       <tr>
       <td>{{ Course.course_name }}</td>
       <td>{{ Course.course_id }}</td>
       <td><a href="delete/{{ Course.id }}">delete</a></td>
       </tr>
-    {% endfor %}
+      {% endfor %}
     </tbody>
     </table>
   </div>

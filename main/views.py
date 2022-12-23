@@ -15,6 +15,11 @@ def studentlist(request):
     {'stu_list':stu_list})
 
 def courselist(request):
+    course_list= Course.objects.all()
+    return render(request, 'courselist.html',
+    {'course_list':course_list})
+
+def courselist(request):
     return render(request, 'courselist.html')
 
 def modifycourse(request):
@@ -79,11 +84,6 @@ def dropstu(request):
 
 def dropcourse(request):
     return render(request, 'dropcourse.html')
-
-def courselist(request):
-    course_list= Course.objects.all()
-    return render(request, 'courselist.html',
-    {'stu_list':course_list})
 
 def delete(request, id):
   member = Childern.objects.get(id=id)
