@@ -12,12 +12,10 @@ class Student(models.Model):
     def __str__(self) -> str:
         return self.name+" "+self.course_id
 
-class Register(models.Model):
-    mobile= models.CharField(max_length=200)
-    user_name = models.CharField(max_length=50)
-    email = models.CharField(max_length=200)
-    password= models.CharField(max_length=200)
-    def __str__(self) -> str:
-        return self.email+" "+self.password+" "+self.mobile+" "+self.user_name
-
-  
+class Childern(models.Model):
+    name = models.CharField(max_length=50, null=True)
+    dob= models.DateField()
+    email = models.CharField(max_length=50)
+    pas = models.CharField(max_length=200)
+    mobile= models.IntegerField()
+    add= models.TextField()
