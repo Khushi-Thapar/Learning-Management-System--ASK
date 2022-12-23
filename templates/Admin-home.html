@@ -90,7 +90,7 @@
                 <li><a class="dropdown-item" href="{% url 'studentlist' %}">View Enrolled Students</a></li>
                 <li><a class="dropdown-item" href="{% url 'modifystudent' %}">Modify Student Details</a></li>
                 <li><a class="dropdown-item" href="{% url 'addstudent' %}">Add Student</a></li>
-                <li><a class="dropdown-item" href="#">Drop Student</a></li>
+                <li><a class="dropdown-item" href="{% url 'dropstu' %}">Drop Student</a></li>
               </ul>
              </li>
             <li class="nav-item dropdown view">
@@ -100,7 +100,7 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="{% url 'courselist' %}">View Courses</a></li>
                 <li><a class="dropdown-item" href="{% url 'addcourse' %}">Add Course</a></li>
-                <li><a class="dropdown-item" href="#">Drop Course</a></li>
+                <li><a class="dropdown-item" href="{% url 'dropcourse' %}">Drop Course</a></li>
                 <li><a class="dropdown-item" href="{% url 'modifycourse' %}">Modify Course</a></li>
               </ul>
              </li>

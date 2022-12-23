@@ -73,3 +73,9 @@ def changestd(request):
         id = request.POST.get('sid')
         if (Childern.objects.filter(id = id).exists()):
             phone = Childern.objects.get(mobile=request.session["user_id"])
+
+def dropstu(request):
+    return render(request, 'dropstu.html')
+
+def dropcourse(request):
+    return render(request, 'dropcourse.html')
