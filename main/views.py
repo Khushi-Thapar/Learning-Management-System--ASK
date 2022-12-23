@@ -20,8 +20,6 @@ def courselist(request):
 def modifycourse(request):
     return render(request, 'modifyCourse.html')
 
-
-
 def modifystudent(request):
     return render(request, 'modifyStudent.html')
 
@@ -76,3 +74,18 @@ def changestd(request):
         if (Childern.objects.filter(id = id).exists()):
             phone = Childern.objects.get(mobile=request.session["user_id"])
 
+def dropstu(request):
+    return render(request, 'dropstu.html')
+
+def dropcourse(request):
+    return render(request, 'dropcourse.html')
+
+def courselist(request):
+    course_list= Course.objects.all()
+    return render(request, 'courselist.html',
+    {'stu_list':course_list})
+
+def delete(request, id):
+  member = Childern.objects.get(id=id)
+  member.delete()
+  return render(request, 'studentlist.html')

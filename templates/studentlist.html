@@ -84,9 +84,9 @@
                 STUDENTS
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="{% url 'addstudent' %}">Add Student</a></li>
-                <li><a class="dropdown-item" href="{% url 'modifystudent' %}">Modify Student Details</a></li>
                 <li><a class="dropdown-item" href="{% url 'studentlist' %}">View Enrolled Students</a></li>
+                <li><a class="dropdown-item" href="#">Add Student</a></li>
+                <li><a class="dropdown-item" href="#">Drop Student</a></li>
               </ul>
              </li>
             <li class="nav-item dropdown view">
@@ -94,9 +94,10 @@
                 COURSES
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="{% url 'addcourse' %}">Add Course</a></li>
-                <li><a class="dropdown-item" href="{% url 'modifycourse' %}">Modify Course</a></li>
                 <li><a class="dropdown-item" href="{% url 'courselist' %}">View Courses</a></li>
+                <li><a class="dropdown-item" href="#">Add Course</a></li>
+                <li><a class="dropdown-item" href="#">Drop Course</a></li>
+                <li><a class="dropdown-item" href="{% url 'modifycourse' %}">Modify Course</a></li>
               </ul>
              </li>
             <li class="nav-item @@events">
@@ -140,7 +141,7 @@
     <div class="row">
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb mb-2">
-          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="teacher.html">Students</a></li>
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary">Students</a></li>
         </ul>
       </div>
     </div>
@@ -149,47 +150,31 @@
 <!-- /page title -->
 <br>
 <div class="student">
-    {% for Children in stu_list %}
-      <strong>{{ Children }}</strong>
-      <ul>
-        <li>Name: {{ Children.name }}</li>
-        <li>Date of Birth: {{ Children.dob }}</li>
-        <li>Email: {{ Children.email }}</li>
-        <li>Password: {{ Children.pas }}</li>
-        <li>Mobile: {{ Children.mobile }}</li>
-        <li>Address: {{ Children.add }}</li>
-      </ul>
-      <br/>
-      {% endfor %}
-<!-- <table class="table table-warning mt-2">
+  <table class="table table-warning mt-2" border="1">
     <thead>
       <tr class="table-warning">
-        <th scope="col">#</th>
-        <th scope="col">Student's Name</th>
-        <th scope="col">Student's ID</th>
-        <th scope="col">Course</th>
+        <th scope="col">Name</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Address</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="table-warning">
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+      {% for Children in stu_list %}
+      <tr>
+      <td>{{ Children.name }}</td>
+      <td>{{ Children.dob }}</td>
+      <td>{{ Children.email }}</td>
+      <td>{{ Children.pas }}</td>
+      <td>{{ Children.mobile }}</td>
+      <td>{{ Children.add }}</td>
+      <td><a href="delete/{{ Children.id }}">delete</a></td>
       </tr>
-      <tr class="table-warning">
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr class="table-warning">
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+    {% endfor %}
     </tbody>
-  </table> -->
+    </table>
   </div>
 <!-- footer -->
 <footer>
