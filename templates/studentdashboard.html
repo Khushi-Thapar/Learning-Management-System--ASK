@@ -87,9 +87,9 @@
             <li class="nav-item @@courses">
               <a class="nav-link" href="#courses">COURSES</a>
             </li>
-
+            
             <li class="nav-item @@courses">
-              <a class="nav-link" href="#logout" data-toggle="modal" data-target="#logout">Logout</a>
+              <a class="nav-link" href="{% url 'logout' %}" >Logout</a>
             </li>
 
 
@@ -102,7 +102,7 @@
 <!-- /header -->
 
 <!-- Modal -->
-<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- <div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content rounded-0 border-0 p-4">
             <div class="modal-header border-0">
@@ -115,12 +115,12 @@
                 <form action="#" class="row">
                     <div class="col-12">
                       <a href="index.html"><button type="submit" class="btn btn-primary" > LOGOUT </button></a>
-                    </div>
+                    </d iv>
                 </form>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- page title -->
 <section class="page-title-section overlay" data-background="{% static 'images/backgrounds/page-title.jpg' %}">
