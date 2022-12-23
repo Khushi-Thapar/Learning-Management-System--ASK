@@ -20,17 +20,12 @@
 <body>
     <h1 class="center">Student Details Modification</h1>
     <div class="center">
-        <form>
-            <div class="labels">
-            <label for="stuName">Student Name</label>
-            <input type="text" id="stuName">
-            </div>
+        <form action="{% url 'changestd' %}" method="post" class="row"> {% csrf_token %}
             <div class = "labels">
             <label for="Code">Student ID</label>
-            <input type="text" id="Code">
+            <input type="text" id="Code" name="sid">
             </div>
-            <input type="checkbox" id="option" name="option" value="defaultt">
-            <label for="option">Ok</label><br>
+            <button id="option" name="option" value="default" name = "verify">Verify</button>
             <div class = "labels">
             <label for="contactold">Old Contact</label>
             <input type="text" id="contactold">

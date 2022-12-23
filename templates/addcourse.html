@@ -20,14 +20,14 @@
 <body>
     <h1 class="center">Course Details</h1>
     <div class="center">
-        <form action="#" method="post" class="row">
+        <form action="{% url 'newcourse' %}" method="post" class="row"> {% csrf_token %}
             <div class="labels">
-            <label for="name">Course Name</label>
-            <input type="text" id="name" name = "name">
+            <label for="cname">Course Name</label>
+            <input type="text" id="cname" name = "cname">
             </div>
             <div class = "labels">
-            <label for="address">Course Id</label>
-            <input type="text" id="address" name = "addr">
+            <label for="cid">Course Id</label>
+            <input type="text" id="cid" name = "cid">
             </div>
             <button type="submit">Confirm</button>
         </form>

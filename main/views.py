@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import Childern
+from .models import Course
 from django.http import HttpResponse
 # Create your views here.
 
@@ -16,6 +17,8 @@ def courselist(request):
 
 def modifycourse(request):
     return render(request, 'modifyCourse.html')
+
+
 
 def modifystudent(request):
     return render(request, 'modifyStudent.html')
@@ -40,3 +43,33 @@ def newstu(request):
 
 def addcourse(request):
     return render(request, 'addcourse.html')
+
+def newcourse(request):
+    if request.method == "POST":
+        cname = request.POST.get('cname')
+        cid = request.POST.get('cid')
+        data = Course(course_name = cname, course_id=cid)
+        data.save()
+    return render(request, 'addcourse.html')
+
+
+def changecourse(request):
+    if request.method == "POST":
+        cname = request.POST.get('Cname')
+        cid = request.POST.get('Ccode')
+        nname = request.POST.get('Nname')
+        nid = request.POST.get('Ncode')
+        if (Course.objects.filter(course_name=cname, course_id=cid).exists()):
+            t = Course.objects.get(course_id = cid)
+            t.course_name = nname
+            t.course_id = nid
+            t.save()
+            return render(request, 'modifyCourse.html')
+        return render(request, 'Admin-home.html')
+    return render(request, 'Admin-home.html')
+
+def changestd(request):
+    if request.method == "POST":
+        id = request.POST.get('sid')
+        if (Childern.objects.filter(id = id).exists()):
+            phone = Childern.objects.get(mobile=request.session["user_id"])

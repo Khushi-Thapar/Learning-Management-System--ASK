@@ -20,22 +20,22 @@
 <body>
     <h1 class="center">Course Modification</h1>
     <div class="center">
-        <form>
+        <form action="{% url 'changecourse' %}" method="post" class="row"> {% csrf_token %}
             <div class="labels">
-            <label for="courseNAme">Old Course Name</label>
-            <input type="text" id="courseName">
+            <label for="courseName">Old Course Name</label>
+            <input type="text" id="courseName" name = "Cname">
             </div>
             <div class = "labels">
-            <label for="Code">Course Code</label>
-            <input type="text" id="Code">
+            <label for="Code">Old Course Code</label>
+            <input type="text" id="Code" name = "Ccode">
             </div>
             <div class="labels">
                 <label for="CodeNew">New Course Code</label>
-                <input type="text" id="CodeNew">
+                <input type="text" id="CodeNew" name = "Ncode">
             </div>
             <div class="labels">
                 <label for="NewCourseName">New Course Name</label>
-                <input type="text" id="NewCourseName">
+                <input type="text" id="NewCourseName" name = "Nname">
             </div>
             <button type="submit">Confirm</button>
         </form>
