@@ -37,3 +37,6 @@ def newstu(request):
         data = Childern(name=name, dob=dob, email=email, pas = pas, mobile = mob, add = ad)
         data.save()
     return render(request, 'Admin-home.html')
+
+def addcourse(request):
+    return render(request, 'addcourse.html')

@@ -21,6 +21,7 @@ urlpatterns = [
     path("", views.index, name='homepage'),
     path('main/', include("main.urls")),
     path('studentlist/', include("main.urls")),
+    path('addcourse/', include("main.urls")),
     path('courselist/', include("main.urls")),
     path('modifycourse/', include("main.urls")),
     path('studentcourse/', include("students.urls")),
