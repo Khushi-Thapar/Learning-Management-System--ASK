@@ -1,11 +1,9 @@
 from django.shortcuts import render
-from django.contrib.auth.models import User, auth
+from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import Childern
 from .models import Course
-from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
-
 # Create your views here.
 
 def index(request):
@@ -91,8 +89,3 @@ def delete(request, id):
   member = Childern.objects.get(id=id)
   member.delete()
   return render(request, 'studentlist.html')
-
-def logout(request):
-    logout(request)
-    messages.success(request,("Successfully Logged Out"))
-    return render(request, 'index.html')

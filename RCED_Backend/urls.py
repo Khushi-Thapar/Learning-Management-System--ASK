@@ -27,7 +27,5 @@ urlpatterns = [
     path('studentcourse/', include("students.urls")),
     path('addstudent/', include("main.urls")),
     path("Adminhome/", views.Adminhome, name='Admin-login'),
-    path('students/', include("students.urls")),
-    path('delete/<int:id>', include("main.urls")),
-    path('logout/', include("main.urls")),
+    path('students/', include("students.urls"))
 ]
