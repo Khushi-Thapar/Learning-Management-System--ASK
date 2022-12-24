@@ -14,7 +14,9 @@ urlpatterns = [
     path('newcourse/', views.newcourse, name="newcourse"),
     path('changestd/', views.changestd, name="changestd"),
     path('changecourse/', views.changecourse, name="changecourse"),
+    path('downloadcsv/', views.getdata, name="downloadcsv"),
     path('addcourse/', views.addcourse, name="addcourse"),
     path('modifycourse/', views.modifycourse, name="modifycourse"),
-    path('delete/<int:id>', views.delete, name='delete'),
+    path('delete/<int:id>/', views.delete, name='delete'),
+    path('validiate/', views.validiate, name = "validiate"),
 ]

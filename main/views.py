@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import Childern
 from .models import Course
 from django.http import HttpResponse
+import csv
 # Create your views here.
 
 def index(request):
@@ -11,8 +12,7 @@ def index(request):
 
 def studentlist(request):
     stu_list= Childern.objects.all()
-    return render(request, 'studentlist.html',
-    {'stu_list':stu_list})
+    return render(request, 'studentlist.html', {'stu_list':stu_list})
 
 def courselist(request):
     course_list= Course.objects.all()
@@ -74,10 +74,28 @@ def changecourse(request):
     return render(request, 'Admin-home.html')
 
 def changestd(request):
+    return render(request, 'modifyStudent.html')
+
+def validiate(request):
     if request.method == "POST":
         id = request.POST.get('sid')
         if (Childern.objects.filter(id = id).exists()):
-            phone = Childern.objects.get(mobile=request.session["user_id"])
+            child = Childern.objects.get(id = id)
+            mob = child.mobile
+            print(mob)
+            if (request.POST.get('option1')):
+                newmob = mob
+            else:
+                newmob = request.POST.get('newnum')
+                child.mobile = newmob
+            add = child.add
+            if (request.POST.get('option2')):
+                newadd = add
+            else:
+                newadd = request.POST.get('newadd')
+                child.add = newadd
+    return render(request, 'Admin-home.html')
+
 
 def dropstu(request):
     return render(request, 'dropstu.html')
@@ -88,4 +106,16 @@ def dropcourse(request):
 def delete(request, id):
   member = Childern.objects.get(id=id)
   member.delete()
-  return render(request, 'studentlist.html')
+  stu_list = Childern.objects.all()
+  return render(request, 'studentlist.html' , {'stu_list': stu_list})
+
+def getdata(request):
+    response = HttpResponse(
+        content_type='text/csv',
+        headers={'Content-Disposition': 'attachment; filename="Students.csv"'},
+    )
+    students = Childern.objects.all()
+    writer = csv.writer(response)
+    for student in students:
+        writer.writerow([student.id,student.name,student.dob, student.email, student.mobile, student.add])
+    return response
