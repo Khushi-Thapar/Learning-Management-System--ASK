@@ -157,13 +157,12 @@
       </tr>
     </thead>
     <tbody>
-      {% for Course in course_list %}
+      {% for course in course_list %}
       <tr>
-      <td>{{ Course.course_name }}</td>
-      <td>{{ Course.course_id }}</td>
-      <td><a href="delete/{{ Course.id }}">delete</a></td>
+      <td>{{ course.course_name }}</td>
+      <td>{{ course.course_id }}</td>
       </tr>
-      {% endfor %}
+    {% endfor %}
     </tbody>
     </table>
   </div>

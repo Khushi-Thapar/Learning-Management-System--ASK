@@ -14,13 +14,14 @@ def studentlist(request):
     stu_list= Childern.objects.all()
     return render(request, 'studentlist.html', {'stu_list':stu_list})
 
-def courselist(request):
-    course_list= Course.objects.all()
-    return render(request, 'courselist.html',
-    {'course_list':course_list})
+# def courselist(request):
+#     course_list= Course.objects.all()
+#     return render(request, 'courselist.html',
+#     {'course_list':course_list})
 
 def courselist(request):
-    return render(request, 'courselist.html')
+    course_list= Course.objects.all()
+    return render(request, 'courselist.html',{'course_list':course_list} )
 
 def modifycourse(request):
     return render(request, 'modifyCourse.html')
