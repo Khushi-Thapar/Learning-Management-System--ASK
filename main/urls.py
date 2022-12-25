@@ -24,7 +24,5 @@ urlpatterns = [
     path('validiate/', views.validiate, name = "validiate"),
     path('back/', views.back, name = "back"),
     path('upload/<int:id>/', views.upload, name = 'upload'),
-    path('uploadmedia/<int:id>/', views.uploadmedia, name = 'uploadmedia'),
     path('home/', views.home, name="home"),
-    path('uploadfile/<int:id>',views.formsubmission, name = 'uploadfile'),
 ]

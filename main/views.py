@@ -7,7 +7,6 @@ from .models import Childern
 from .models import Course
 from django.http import HttpResponse
 import csv
-from main.forms import upload
 # Create your views here.
 
 
@@ -155,7 +154,9 @@ def back(request):
 
 def home(request):
     return render(request, 'index.html')
-
+def upload(request, id):
+    cvar = Course.objects.get(id = id)
+    return render(request, 'fileupload.html', {'cvar': cvar})
 # def uploadmedia(request, id):
 #     cvar = Course.objects.get(id=id)
 #     return render(request, 'fileupload.html', {'cvar': cvar})
