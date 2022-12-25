@@ -30,8 +30,8 @@ def modifystudent(request):
     return render(request, 'modifyStudent.html')
 
 def addstudent(request):
-
-    return render(request, 'addstu.html')
+    course_list = Course.objects.all()
+    return render(request, 'addstu.html' , {'course_list': course_list})
 
 def newstu(request):
     if request.method == "POST":
@@ -43,7 +43,9 @@ def newstu(request):
         email = request.POST.get('email')
         mob = request.POST.get('mob')
         ad = request.POST.get('addr')
-        data = Childern(name=name, dob=dob, email=email, pas = pas, mobile = mob, add = ad)
+        course = request.POST.get('course')
+        c = Course.objects.get(course_id = course)
+        data = Childern(course = c, name=name, dob=dob, email=email, pas = pas, mobile = mob, add = ad)
         data.save()
     return render(request, 'Admin-home.html')
 
@@ -109,6 +111,12 @@ def delete(request, id):
   member.delete()
   stu_list = Childern.objects.all()
   return render(request, 'studentlist.html' , {'stu_list': stu_list})
+
+def delete1(request, id):
+  member = Course.objects.get(id=id)
+  member.delete()
+  course_list = Course.objects.all()
+  return render(request, 'courselist.html' , {'course_list': course_list})
 
 def getdata(request):
     response = HttpResponse(

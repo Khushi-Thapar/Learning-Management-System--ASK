@@ -40,6 +40,15 @@
             <label for="address">Permanent Address</label>
             <input type="text" id="address" name = "addr">
             </div>
+            <div class = "labels">
+                <label for = "course">Course</label>
+                <select name="course" id="course" >
+                    {% for course in course_list %}
+                    <option value="{{ course.course_id }}">{{ course.course_id }}</option>
+                    {% endfor %}
+                </select>
+
+            </div>
             <button type="submit">Confirm</button>
         </form>
       </div>

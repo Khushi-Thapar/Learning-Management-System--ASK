@@ -18,5 +18,6 @@ urlpatterns = [
     path('addcourse/', views.addcourse, name="addcourse"),
     path('modifycourse/', views.modifycourse, name="modifycourse"),
     path('delete/<int:id>/', views.delete, name='delete'),
+    path('delete1/<int:id>', views.delete1, name='delete1'),
     path('validiate/', views.validiate, name = "validiate"),
 ]
