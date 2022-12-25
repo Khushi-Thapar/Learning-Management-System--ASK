@@ -34,7 +34,14 @@
             <label for="addnew">New Address</label>
             <input type="text" id="addnew" name = "newadd">
             </div>
-
+            <div class = "labels">
+                <label for = "course">New Course</label>
+                <select name="newcourse" id="newcourse" >
+                    {% for course in course_list %}
+                    <option value="{{ course.course_id }}">{{ course.course_id }}</option>
+                    {% endfor %}
+                </select>
+            </div>
             <button type="submit">Confirm</button>
         </form>
       </div>

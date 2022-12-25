@@ -14,11 +14,6 @@ def studentlist(request):
     stu_list= Childern.objects.all()
     return render(request, 'studentlist.html', {'stu_list':stu_list})
 
-# def courselist(request):
-#     course_list= Course.objects.all()
-#     return render(request, 'courselist.html',
-#     {'course_list':course_list})
-
 def courselist(request):
     course_list= Course.objects.all()
     return render(request, 'courselist.html',{'course_list':course_list} )
@@ -49,6 +44,22 @@ def newstu(request):
         data.save()
     return render(request, 'Admin-home.html')
 
+def changestd(request):
+    if request.method == "POST":
+        csid = request.POST.get('sid')
+        cnum = request.POST.get('newnum')
+        cadd = request.POST.get('newadd')
+        ccourse = request.POST.get('newcourse')
+        if (Childern.objects.filter(id=csid).exists()):
+            t = Childern.objects.get(id=csid)
+            t.mobile = cnum
+            t.add = cadd
+            t.course = ccourse
+            t.save()
+            return render(request, 'modifyStudent.html')
+        return render(request, 'Admin-home.html')
+    return render(request, 'Admin-home.html')
+
 def addcourse(request):
     return render(request, 'addcourse.html')
 
@@ -59,7 +70,6 @@ def newcourse(request):
         data = Course(course_name = cname, course_id=cid)
         data.save()
     return render(request, 'addcourse.html')
-
 
 def changecourse(request):
     if request.method == "POST":
@@ -75,9 +85,6 @@ def changecourse(request):
             return render(request, 'modifyCourse.html')
         return render(request, 'Admin-home.html')
     return render(request, 'Admin-home.html')
-
-def changestd(request):
-    return render(request, 'modifyStudent.html')
 
 def validiate(request):
     if request.method == "POST":
@@ -126,5 +133,5 @@ def getdata(request):
     students = Childern.objects.all()
     writer = csv.writer(response)
     for student in students:
-        writer.writerow([student.id,student.name,student.dob, student.email, student.mobile, student.add])
+        writer.writerow([student.id,student.name,student.dob, student.email, student.mobile, student.add,student.course])
     return response
