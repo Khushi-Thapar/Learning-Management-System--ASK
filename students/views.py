@@ -6,10 +6,17 @@ from RCED_Backend.views import Adminhome
 # Create your views here.
 
 def index(request):
-    return HttpResponse("hello world")
+    return render(request, 'index.html')
 
 def studentcourse(request, id):
     if (Childern.objects.filter(id = id).exists()):
         cvar= Childern.objects.get(id = id)
         return render(request, 'stucourse.html', {'cvar': cvar})
     return render(request, 'stucourse.html')
+
+def logout(request):
+    if (Childern.objects.filter(id = id).exists()):
+        cvar= Childern.objects.get(id = id)
+        cvar.status = False
+        return render(request, 'index.html')
+    return render(request, 'studentdashboard.html')

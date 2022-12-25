@@ -124,7 +124,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="#" class="row">
+                <form action="{% url 'home' %}" class="row">
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">LOGOUT</button>
                     </div>
@@ -154,6 +154,8 @@
       <tr class="table-warning">
         <th scope="col">Course Name</th>
         <th scope="col">Course ID</th>
+        <th scope="col">Delete Courses</th>
+        <th scope="col">Upload</th>
       </tr>
     </thead>
     <tbody>
@@ -162,6 +164,7 @@
       <td>{{ course.course_name }}</td>
       <td>{{ course.course_id }}</td>
       <td><a href="{% url 'delete1' course.id %}">delete</a></td>
+      <td><a href="{% url 'upload' course.id %}">Upload Files</a></td>
       </tr>
     {% endfor %}
     </tbody>

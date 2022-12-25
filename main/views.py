@@ -1,3 +1,5 @@
+import os
+
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -5,7 +7,10 @@ from .models import Childern
 from .models import Course
 from django.http import HttpResponse
 import csv
+from main.forms import upload
 # Create your views here.
+
+
 
 def index(request):
     return render(request, 'Admin-home.html')
@@ -71,6 +76,10 @@ def newcourse(request):
         cid = request.POST.get('cid')
         data = Course(course_name = cname, course_id=cid)
         data.save()
+        directory = cid
+        parent_dir = "media/"
+        path = os.path.join(parent_dir, directory)
+        os.mkdir(path)
     return render(request, 'addcourse.html')
 
 def changecourse(request):
@@ -127,6 +136,9 @@ def delete1(request, id):
   course_list = Course.objects.all()
   return render(request, 'courselist.html', {'course_list': course_list})
 
+
+
+
 def getdata(request):
     response = HttpResponse(
         content_type='text/csv',
@@ -140,3 +152,26 @@ def getdata(request):
 
 def back(request):
     return render(request, 'Admin-home.html')
+
+def home(request):
+    return render(request, 'index.html')
+
+# def uploadmedia(request, id):
+#     cvar = Course.objects.get(id=id)
+#     return render(request, 'fileupload.html', {'cvar': cvar})
+#
+# def formsubmission(request, id):
+#     form = upload()
+#     if request.method == "POST":
+#         form = upload(request.POST,request.FILES)
+#         if form.is_valid():
+#             f = request.FILES['file']
+#             cvar = Course.objects.get(id=id)
+#             cname = cvar.course_id
+#             with open('media/' + cname + '/' + f.name, 'wb+') as destination:
+#                 for chunk in f.chunks():
+#                     destination.write(chunk)
+#             return HttpResponse("FILE UPLOADED SUCCESSFULLY")
+#         else:
+#             form = upload()
+#             return render(request, 'Admin-home.html', {'form': form})

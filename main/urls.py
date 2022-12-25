@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path("", views.index, name="mainIndex"),
@@ -21,4 +23,8 @@ urlpatterns = [
     path('delete1/<int:id>', views.delete1, name='delete1'),
     path('validiate/', views.validiate, name = "validiate"),
     path('back/', views.back, name = "back"),
+    path('upload/<int:id>/', views.upload, name = 'upload'),
+    path('uploadmedia/<int:id>/', views.uploadmedia, name = 'uploadmedia'),
+    path('home/', views.home, name="home"),
+    path('uploadfile/<int:id>',views.formsubmission, name = 'uploadfile'),
 ]

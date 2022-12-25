@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 class Course(models.Model):
     course_name = models.CharField(max_length=200)
     course_id = models.CharField(max_length=200)
+    document = models.FileField(upload_to='documents/', null=True)
     def __str__(self) -> str:
         return self.course_name+" "+self.course_id
 
@@ -15,3 +16,4 @@ class Childern(models.Model):
     pas = models.CharField(max_length=200)
     mobile = models.IntegerField()
     add = models.TextField()
+    status = models.BooleanField(default = False)
