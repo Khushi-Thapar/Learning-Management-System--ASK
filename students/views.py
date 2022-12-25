@@ -1,15 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from main.models import Childern
+from RCED_Backend.views import Adminhome
 
 # Create your views here.
 
 def index(request):
     return HttpResponse("hello world")
 
-def studentcourse(request):
-    mail = (request.POST.get('LoginEmail'))
-    if (Childern.objects.filter(email = mail).exists()):
-        cvar= Childern.objects.get(email=mail)
-        return render(request, 'studentdashboard.html', {'cvar': cvar})
+def studentcourse(request, id):
+    if (Childern.objects.filter(id = id).exists()):
+        cvar= Childern.objects.get(id = id)
+        return render(request, 'stucourse.html', {'cvar': cvar})
     return render(request, 'stucourse.html')

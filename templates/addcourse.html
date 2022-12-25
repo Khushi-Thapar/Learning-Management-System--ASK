@@ -30,6 +30,10 @@
             <input type="text" id="cid" name = "cid">
             </div>
             <button type="submit">Confirm</button>
+
+        </form>
+        <form action="{% url 'back' %}" method="post" class="row"> {% csrf_token %}
+            <button type="submit">Dashboard</button>
         </form>
       </div>
 

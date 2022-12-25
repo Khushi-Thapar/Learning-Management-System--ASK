@@ -125,7 +125,7 @@ def delete1(request, id):
   member = Course.objects.get(id=id)
   member.delete()
   course_list = Course.objects.all()
-  return render(request, 'courselist.html' , {'course_list': course_list})
+  return render(request, 'courselist.html', {'course_list': course_list})
 
 def getdata(request):
     response = HttpResponse(
@@ -137,3 +137,6 @@ def getdata(request):
     for student in students:
         writer.writerow([student.id,student.name,student.dob, student.email, student.mobile, student.add,student.course])
     return response
+
+def back(request):
+    return render(request, 'Admin-home.html')
