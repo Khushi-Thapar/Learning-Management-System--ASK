@@ -22,7 +22,8 @@ def modifycourse(request):
     return render(request, 'modifyCourse.html')
 
 def modifystudent(request):
-    return render(request, 'modifyStudent.html')
+    course_list = Course.objects.all()
+    return render(request, 'modifyStudent.html', {'course_list': course_list})
 
 def addstudent(request):
     course_list = Course.objects.all()
@@ -50,11 +51,12 @@ def changestd(request):
         cnum = request.POST.get('newnum')
         cadd = request.POST.get('newadd')
         ccourse = request.POST.get('newcourse')
+        c = Course.objects.get(course_id = ccourse)
         if (Childern.objects.filter(id=csid).exists()):
             t = Childern.objects.get(id=csid)
             t.mobile = cnum
             t.add = cadd
-            t.course = ccourse
+            t.course = c
             t.save()
             return render(request, 'modifyStudent.html')
         return render(request, 'Admin-home.html')
