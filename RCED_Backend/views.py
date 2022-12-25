@@ -15,6 +15,7 @@ def Adminhome(request):
     if mail == 'admin@gmail.com' and pas == 'admin':
         return render(request, 'Admin-home.html')
     if (Childern.objects.filter(email = mail, pas=pas).exists()):
-        return render(request, 'studentdashboard.html')
+        cvar= Childern.objects.get(email=mail)
+        return render(request, 'studentdashboard.html', {'cvar': cvar})
     else:
         return render(request, 'index.html')
