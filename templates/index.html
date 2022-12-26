@@ -77,58 +77,12 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">Home</a>
             </li>
-            <li class="nav-item dropdown view">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  About Us
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="teacher.html">RCED Profile</a></li>
-                  <li><a class="dropdown-item" href="teacher-single.html">Our Goals</a></li>
-                  <li><a class="dropdown-item" href="notice.html">Key Professionals</a></li>
-                  <li><a class="dropdown-item" href="notice-single.html">Testimonials</a></li>
-                  <li><a class="dropdown-item" href="research.html">FAQ</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown view">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Our Expertise
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="teacher.html">Skill Development</a></li>
-                  <li><a class="dropdown-item" href="teacher-single.html">Entrepreneurship Development</a>
-                    <li class="dropdown-item dropdown dropleft">
-                        <a class="dropdown-toggle" href="#" id="navbarDropdownSubmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Sub Menu
-                        </a>
-                        <ul class="dropdown-menu dropdown-submenu" aria-labelledby="navbarDropdownSubmenu">
-                          <li><a class="dropdown-item" href="#!">Entrepreneurship Awreness Camp</a></li>
-                          <li><a class="dropdown-item" href="#!">Open Learning Program</a></li>
-                          <li><a class="dropdown-item" href="#!">Entrepreneurship Development Program</a></li>
-                        </ul>
-                      </li>
-                    </li>
-                  <li><a class="dropdown-item" href="notice.html" >Start-Up Support</a></li>
-                  <li class="dropdown-item dropdown dropleft">
-                    <a class="dropdown-toggle" href="#" id="navbarDropdownSubmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Sub Menu
-                    </a>
-                    <ul class="dropdown-menu dropdown-submenu" aria-labelledby="navbarDropdownSubmenu">
-                      <li><a class="dropdown-item" href="#!">Project Consultancy</a></li>
-                      <li><a class="dropdown-item" href="#!">Market Feasibility Study</a></li>
-                      <li><a class="dropdown-item" href="#!">Techno Economic Feasibility Study</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="notice-single.html">Capacity Building</a></li>
-                  <li><a class="dropdown-item" href="research.html">Research and Evaluation</a></li>
-                  <li><a class="dropdown-item" href="scholarship.html">Placement Services</a></li>
-                  <li><a class="dropdown-item" href="course-single.html">Management Internship</a></li>
-                </ul>
-              </li>
+
             <li class="nav-item @@events">
               <a class="nav-link" href="{% url 'courses' %}">Courses</a>
             </li>
             <li class="nav-item @@blog">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="#footer">Contact</a>
             </li>
           </ul>
         </div>
@@ -200,7 +154,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-sm-4 position-relative success-video">
-          <a class="play-btn venobox" href="https://youtu.be/nA1Aqp0sPQo" data-vbtype="video">
+          <a class="play-btn venobox" href="https://www.youtube.com/watch?v=5_eGkgYkbPw" data-vbtype="video">
             <i class="ti-control-play"></i>
           </a>
         </div>
@@ -208,7 +162,7 @@
           <div class="bg-white p-5">
             <h2 class="section-title">Regional Centre For Entrepreneurship Development - RCED
                 (Empowering Youth Since 1995)</h2>
-            <p>RCED is committed to promote skill and entrepreneurship development in Northern states. Our vision is to become an acknowledged pioneer resources institute engaged in promotion of skill and entrepreneurship training. Our mission is to become a catalyst in facilitating emergence of competent first generation entrepreneurs and ensure the availability of skilled manpower.</p>
+            <p>RCED is committed to promote skill and entrepreneurship development in Northern states. Our vision is to become an acknowledged pioneer resources institute engaged in promotion of skill and entrepreneurship training. Our mission is to become a catalyst in facilitating emergence of competent first generation entrepreneurs and ensure the availability of skilled manpower.<br><br><br></p>
           </div>
         </div>
       </div>
@@ -226,11 +180,10 @@
         <img class="card-img-top rounded-0" src="{% static 'images/blog/post-1.jpg' %}" alt="Post thumb">
         <div class="card-body">
           <!-- post meta -->
-          <a href="blog-single.html">
+          <a href="#">
             <h4 class="card-title">Entrepreneurship Development</h4>
           </a>
-          <p class="card-text">RCED conducts entrepreneurship development programs (EDPs) and entrepreneurship awareness camps (EACs) for prospective as well as existing entrepreneurs...</p>
-          <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+          <p class="card-text">RCED conducts entrepreneurship development programs (EDPs) and entrepreneurship awareness camps (EACs) for prospective as well as existing entrepreneurs.</p>
         </div>
       </div>
     </article>
@@ -240,12 +193,11 @@
         <img class="card-img-top rounded-0" src="{% static 'images/blog/post-2.jpg' %}" alt="Post thumb">
         <div class="card-body">
           <!-- post meta -->
-          <a href="blog-single.html">
+          <a href="#">
             <h4 class="card-title">Skill Development</h4>
           </a>
           <p class="card-text">We specialize in conducting skill development programs in association with various Ministries, Government Departments, PSUs, Institutions and Corporates in various parts of North India...
         </p>
-          <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
         </div>
       </div>
     </article>
@@ -255,11 +207,10 @@
         <img class="card-img-top rounded-0" src="{% static 'images/blog/post-3.jpg' %}" alt="Post thumb">
         <div class="card-body">
           <!-- post meta -->
-          <a href="blog-single.html">
+          <a href="#">
             <h4 class="card-title">Career Guidance</h4>
           </a>
           <p class="card-text">RCED mentors offer free career guidance services to the youth where they help them make informed decisions for choosing a career path and the subsequent course of action...</p>
-          <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
         </div>
       </div>
     </article>
@@ -372,8 +323,7 @@
       <div class="row align-items-center">
         <div class="col-md-6 order-2 order-md-1">
           <h2 class="section-title">Youth and Women Empowerment</h2>
-          <p>There is a compelling need to launch certain programmes that address the challenge of imparting awareness required by the students and developing their skills for wage or self employment. An empowered, educated woman can help bring a change in the society. Youth, being the biggest resource of the country needs to be educated to bring a positive change in the society... </p>
-          <a href="about.html" class="btn btn-outline-primary">Learn more</a>
+          <p>There is a compelling need to launch certain programmes that address the challenge of imparting awareness required by the students and developing their skills for wage or self employment. An empowered, educated woman can help bring a change in the society. Youth, being the biggest resource of the country needs to be educated to bring a positive change in the society. </p>
         </div>
         <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
           <img class="img-fluid w-100" src="{% static 'images/about/about-us.jpg' %}" alt="about image">
@@ -455,11 +405,9 @@
       <div class="card p-0 border-primary rounded-0 hover-shadow">
         <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
         <div class="card-body">
-          <a href="course-single.html">
+          <a href="#">
             <h4 class="card-title"> Management Internships</h4>
           </a>
-          <p class="card-text mb-4"> An internship is basically termed as a…</p>
-          <a href="course-single.html" class="btn btn-primary btn-sm">Read More</a>
         </div>
       </div>
     </div>
@@ -468,11 +416,9 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
-            <a href="course-single.html">
+            <a href="#">
               <h4 class="card-title"> Skill Development</h4>
             </a>
-            <p class="card-text mb-4"> One of the top 100 advertising and marketing agencies knows…</p>
-            <a href="course-single.html" class="btn btn-primary btn-sm">Read More</a>
           </div>
         </div>
       </div>
@@ -481,11 +427,9 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
-            <a href="course-single.html">
+            <a href="#">
               <h4 class="card-title"> Entrepreneurship Development</h4>
             </a>
-            <p class="card-text mb-4"> One of the top 100 advertising and marketing agencies knows…</p>
-            <a href="course-single.html" class="btn btn-primary btn-sm">Read More</a>
           </div>
         </div>
       </div>
@@ -494,11 +438,9 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
-            <a href="course-single.html">
+            <a href="#">
               <h4 class="card-title"> Start-up Support</h4>
             </a>
-            <p class="card-text mb-4"> One of the top 100 advertising and marketing agencies knows…</p>
-            <a href="course-single.html" class="btn btn-primary btn-sm">Read More</a>
           </div>
         </div>
       </div>
@@ -507,11 +449,9 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
-            <a href="course-single.html">
+            <a href="#">
               <h4 class="card-title"> Capacity Building</h4>
             </a>
-            <p class="card-text mb-4"> One of the top 100 advertising and marketing agencies knows…</p>
-            <a href="course-single.html" class="btn btn-primary btn-sm">Read More</a>
           </div>
         </div>
       </div>
@@ -520,11 +460,9 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'images/courses/course-1.jpg' %}" alt="course thumb">
           <div class="card-body">
-            <a href="course-single.html">
+            <a href="#">
               <h4 class="card-title"> Research and Evaluation</h4>
             </a>
-            <p class="card-text mb-4"> One of the top 100 advertising and marketing agencies knows…</p>
-            <a href="course-single.html" class="btn btn-primary btn-sm">Read More</a>
           </div>
         </div>
       </div>
@@ -533,19 +471,19 @@
       <!-- mobile see all button -->
       <div class="row">
         <div class="col-12 text-center">
-          <a href="courses.html" class="btn btn-sm btn-outline-primary d-sm-none d-inline-block">sell all</a>
+          <a href="#" class="btn btn-sm btn-outline-primary d-sm-none d-inline-block"></a>
         </div>
       </div>
     </div>
   </section>
   <!-- /courses -->
-  <section class="testimonial-section" style="background: url(images/testimonials/1.jpg);">
+  <section class="testimonial-section" >
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="section-title text-center">
             <h3>What Our
-              <span>Patients Says</span>
+              <span>Students Says</span>
             </h3>
           </div>
         </div>
@@ -620,7 +558,7 @@
       </div>
     </div>
   </section>
-  <div class="footer bg-footer section border-bottom ">
+  <div class="footer bg-footer section border-bottom " id="footer">
     <div class="container">
         <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0 ">
           <!-- logo -->
