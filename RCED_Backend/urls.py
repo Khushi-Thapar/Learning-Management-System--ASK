@@ -32,6 +32,6 @@ urlpatterns = [
     path('logout/', include("students.urls")),
     path('students/', include("students.urls")),
     path('home/', include("main.urls")),
+    path('stuhome/<int:id>', views.stuhome, name = "stuhome"),
     path('notification/', include("main.urls"))
-
 ]

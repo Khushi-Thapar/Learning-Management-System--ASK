@@ -8,6 +8,8 @@ urlpatterns = [
     path("", views.index, name="mainIndex"),
     path('studentlist/', views.studentlist, name="studentlist"),
     path('courselist/', views.courselist, name="courselist"),
+    path('notification/', views.notification, name="notification"),
+    path('pushnotice/', views.pushnotice, name = "pushnotice"),
     path('modifystudent/', views.modifystudent, name="modifystudent"),
     path('addstudent/', views.addstudent, name="addstudent"),
     path('newstu/', views.newstu, name="newstu"),
@@ -23,7 +25,6 @@ urlpatterns = [
     path('delete1/<int:id>', views.delete1, name='delete1'),
     path('validiate/', views.validiate, name = "validiate"),
     path('back/', views.back, name = "back"),
-    path('notification/', views.notification, name = "notification"),
     path('upload/<int:id>/', views.upload, name = 'upload'),
     path('home/', views.home, name="home"),
 ]

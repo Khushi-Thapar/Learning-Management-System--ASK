@@ -35,3 +35,8 @@ def courses(request):
 
 def home1(request):
     return render(request, 'index.html')
+
+def stuhome(request, id):
+    cvar = Childern.objects.get(id = id)
+
+    return render(request, 'studentdashboard.html', {'cvar': cvar})

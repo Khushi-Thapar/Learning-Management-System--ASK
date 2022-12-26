@@ -182,4 +182,13 @@ def upload(request, id):
 #             return render(request, 'Admin-home.html', {'form': form})
 
 def notification(request):
-    return render(request, 'notice.html')
+    course_list = Course.objects.all()
+    return render(request, 'notice.html', {'course_list': course_list})
+
+def pushnotice(request):
+    cid = request.POST.get('course')
+    msg = request.POST.get('notice')
+    c = Course.objects.get(course_id = cid)
+    c.notice = msg
+    c.save()
+    return render(request, 'Admin-home.html')

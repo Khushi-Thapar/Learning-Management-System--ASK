@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Course Modification</title>
-
+    <title>Add Notification</title>
     <style>
         *{
             margin: 9px 5px;
@@ -21,19 +19,21 @@
 <body>
     <h1 class="center">Notification</h1>
     <div class="center">
-        <form action="{% url 'changestd' %}" method="post" class="row"> {% csrf_token %}
+        <form action="{% url 'pushnotice' %}" method="post" class="row"> {% csrf_token %}
 
             <div class = "labels">
-                <label for = "newcourse">Notice for Course</label>
-                <select name="newcourse" id="newcourse" >
+                <label for = "course">Notice for Course</label>
+                <select name="course" id="course" >
                     {% for course in course_list %}
                     <option value="{{ course.course_id }}">{{ course.course_id }}</option>
                     {% endfor %}
                 </select>
             </div>
             <p><label for="notice">Notice </label></p>
-            <textarea id="notice" name="notice" rows="4" cols="50">Annoucement </textarea>
+            <textarea id="notice" name="notice" rows="4" cols="50" placeholder="Enter announcement here"> </textarea>
+
             <button type="submit">Confirm</button>
+
         </form>
         <form action="{% url 'back' %}" method="post" class="row"> {% csrf_token %}
             <button type="submit">Dashboard</button>
