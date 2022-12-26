@@ -166,7 +166,7 @@
       <td>{{ course.course_name }}</td>
       <td>{{ course.course_id }}</td>
       <td><a href="{% url 'delete1' course.id %}">delete</a></td>
-      <td><a href="{% url 'upload' course.id %}">Upload Files</a></td>
+      <td><a href="{{ course.link }}">Access Course</a></td>
       </tr>
     {% endfor %}
     </tbody>

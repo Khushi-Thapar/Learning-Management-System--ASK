@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class Course(models.Model):
     course_name = models.CharField(max_length=200)
     course_id = models.CharField(max_length=200)
-    document = models.FileField(upload_to='documents/', null=True)
+    link = models.CharField(max_length=1000, default="index.html")
     def __str__(self) -> str:
         return self.course_name+" "+self.course_id
 

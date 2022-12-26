@@ -74,10 +74,11 @@ def newcourse(request):
     if request.method == "POST":
         cname = request.POST.get('cname')
         cid = request.POST.get('cid')
+        clink = request.POST.get('clink')
         if (Course.objects.filter(course_id = cid).exists()):
             return render(request, 'Admin-home.html')
         else:
-            data = Course(course_name = cname, course_id=cid)
+            data = Course(course_name = cname, course_id=cid, link = clink)
             data.save()
     return render(request, 'Admin-home.html')
 
@@ -87,10 +88,12 @@ def changecourse(request):
         cid = request.POST.get('Ccode')
         nname = request.POST.get('Nname')
         nid = request.POST.get('Ncode')
+        nlink = request.POST.get('Nlink')
         if (Course.objects.filter(course_name=cname, course_id=cid).exists()):
             t = Course.objects.get(course_id = cid)
             t.course_name = nname
             t.course_id = nid
+            t.link = nlink
             t.save()
             messages.success(request, 'Course Mofified Successfully!')
             return render(request, 'Admin-home.html')

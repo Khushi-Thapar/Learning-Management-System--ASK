@@ -15,10 +15,17 @@ def Adminhome(request):
     if mail == 'admin@gmail.com' and pas == 'admin':
         return render(request, 'Admin-home.html')
     if (Childern.objects.filter(email = mail, pas=pas).exists()):
-        cvar= Childern.objects.get(email=mail)
+        cvar = Childern.objects.get(email=mail)
+        data = cvar.course
+        text = str(data)
+        text1 = text.split()
+        a = Course.objects.get(course_id = text1[1])
         if(cvar.status == False):
             cvar.status = True
-            return render(request, 'studentdashboard.html', {'cvar': cvar})
+        context = {}
+        context.update({'cvar':cvar})
+        context.update({'a':a})
+        return render(request, 'studentdashboard.html', context)
     else:
         return render(request, 'index.html')
 
