@@ -43,11 +43,18 @@
                 </select>
             </div>
             <button type="submit">Confirm</button>
+            {% include 'Common/Success.html' %}
         </form>
         <form action="{% url 'back' %}" method="post" class="row"> {% csrf_token %}
             <button type="submit">Dashboard</button>
         </form>
       </div>
-
+    <script>
+        setTimeout(function (){
+            if($('#msg').length>0){
+                $(#msg).remove();
+            }
+        }, 2000)
+    </script>
 </body>
 </html>

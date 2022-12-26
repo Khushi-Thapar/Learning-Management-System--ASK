@@ -62,7 +62,8 @@ def changestd(request):
             t.add = cadd
             t.course = c
             t.save()
-            return render(request, 'modifyStudent.html')
+            messages.success(request, 'Student Mofified Successfully!')
+            return render(request, 'Admin-home.html')
         return render(request, 'Admin-home.html')
     return render(request, 'Admin-home.html')
 
@@ -92,7 +93,8 @@ def changecourse(request):
             t.course_name = nname
             t.course_id = nid
             t.save()
-            return render(request, 'modifyCourse.html')
+            messages.success(request, 'Course Mofified Successfully!')
+            return render(request, 'Admin-home.html')
         return render(request, 'Admin-home.html')
     return render(request, 'Admin-home.html')
 
