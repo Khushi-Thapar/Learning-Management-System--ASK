@@ -74,13 +74,12 @@ def newcourse(request):
     if request.method == "POST":
         cname = request.POST.get('cname')
         cid = request.POST.get('cid')
-        data = Course(course_name = cname, course_id=cid)
-        data.save()
-        directory = cid
-        parent_dir = "media/"
-        path = os.path.join(parent_dir, directory)
-        os.mkdir(path)
-    return render(request, 'addcourse.html')
+        if (Course.objects.filter(course_id = cid).exists()):
+            return render(request, 'Admin-home.html')
+        else:
+            data = Course(course_name = cname, course_id=cid)
+            data.save()
+    return render(request, 'Admin-home.html')
 
 def changecourse(request):
     if request.method == "POST":

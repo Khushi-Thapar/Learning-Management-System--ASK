@@ -152,6 +152,7 @@
   <table class="table table-warning mt-2" border="1">
     <thead>
       <tr class="table-warning">
+        <th scope="col">ID</th>
         <th scope="col">Course Name</th>
         <th scope="col">Course ID</th>
         <th scope="col">Delete Courses</th>
@@ -161,6 +162,7 @@
     <tbody>
       {% for course in course_list %}
       <tr>
+      <td>{{ course.id }}</td>
       <td>{{ course.course_name }}</td>
       <td>{{ course.course_id }}</td>
       <td><a href="{% url 'delete1' course.id %}">delete</a></td>
