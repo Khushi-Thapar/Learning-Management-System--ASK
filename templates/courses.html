@@ -7,7 +7,7 @@
   <!-- Basic Page Needs
 	================================================== -->
   <meta charset="utf-8">
-  <title>View Students</title>
+  <title>View Courses</title>
 
   <!-- Mobile Specific Metas
 	================================================== -->
@@ -35,8 +35,7 @@
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
   <!--Favicon-->
-  <link rel="shortcut icon" href="{% static 'logo.png' %}" type="image/x-icon">
-  <link rel="icon" href="{% static 'logo.png' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
 
 </head>
 
@@ -78,61 +77,11 @@
           <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item active">
               <form action="{% url 'home1' %}" method="get">
-              <a class="nav-link" href="">Home</a>
+              <a class="nav-link" href="{% url 'homepage' %}">Home</a>
                 </form>
             </li>
-            <li class="nav-item dropdown view">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  About Us
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="teacher.html">RCED Profile</a></li>
-                  <li><a class="dropdown-item" href="teacher-single.html">Our Goals</a></li>
-                  <li><a class="dropdown-item" href="notice.html">Key Professionals</a></li>
-                  <li><a class="dropdown-item" href="notice-single.html">Testimonials</a></li>
-                  <li><a class="dropdown-item" href="research.html">FAQ</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown view">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Our Expertise
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="teacher.html">Skill Development</a></li>
-                  <li><a class="dropdown-item" href="teacher-single.html">Entrepreneurship Development</a>
-                    <li class="dropdown-item dropdown dropleft">
-                        <a class="dropdown-toggle" href="#" id="navbarDropdownSubmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Sub Menu
-                        </a>
-                        <ul class="dropdown-menu dropdown-submenu" aria-labelledby="navbarDropdownSubmenu">
-                          <li><a class="dropdown-item" href="#!">Entrepreneurship Awreness Camp</a></li>
-                          <li><a class="dropdown-item" href="#!">Open Learning Program</a></li>
-                          <li><a class="dropdown-item" href="#!">Entrepreneurship Development Program</a></li>
-                        </ul>
-                      </li>
-                    </li>
-                  <li><a class="dropdown-item" href="notice.html" >Start-Up Support</a></li>
-                  <li class="dropdown-item dropdown dropleft">
-                    <a class="dropdown-toggle" href="#" id="navbarDropdownSubmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Sub Menu
-                    </a>
-                    <ul class="dropdown-menu dropdown-submenu" aria-labelledby="navbarDropdownSubmenu">
-                      <li><a class="dropdown-item" href="#!">Project Consultancy</a></li>
-                      <li><a class="dropdown-item" href="#!">Market Feasibility Study</a></li>
-                      <li><a class="dropdown-item" href="#!">Techno Economic Feasibility Study</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="notice-single.html">Capacity Building</a></li>
-                  <li><a class="dropdown-item" href="research.html">Research and Evaluation</a></li>
-                  <li><a class="dropdown-item" href="scholarship.html">Placement Services</a></li>
-                  <li><a class="dropdown-item" href="course-single.html">Management Internship</a></li>
-                </ul>
-              </li>
-            <li class="nav-item @@events">
-              <a class="nav-link" href="{% url 'courses' %}">Courses</a>
-            </li>
             <li class="nav-item @@blog">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="#footer">Contact</a>
             </li>
           </ul>
         </div>
@@ -205,7 +154,7 @@
 <footer>
 
   <!-- footer content -->
-  <div class="footer bg-footer section border-bottom ">
+  <div class="footer bg-footer section border-bottom " id="footer">
     <div class="container">
         <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0 ">
           <!-- logo -->

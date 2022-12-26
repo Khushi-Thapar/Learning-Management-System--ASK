@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Course Modification</title>
+    <title>Student Modification</title>
 
     <style>
         *{
@@ -17,7 +17,9 @@
             margin: auto;
         }
     </style>
+<link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
 </head>
+
 <body>
     <h1 class="center">Student Details Modification</h1>
     <div class="center">
@@ -43,18 +45,18 @@
                 </select>
             </div>
             <button type="submit">Confirm</button>
-            {% include 'Common/Success.html' %}
+            <!-- {% include 'Common/Success.html' %} -->
         </form>
         <form action="{% url 'back' %}" method="post" class="row"> {% csrf_token %}
             <button type="submit">Dashboard</button>
         </form>
       </div>
     <script>
-        setTimeout(function (){
-            if($('#msg').length>0){
-                $(#msg).remove();
-            }
-        }, 2000)
+        // setTimeout(function (){
+        //     if($('#msg').length>0){
+        //         $('#msg').remove();
+        //     }
+        // }, 2000)
     </script>
 </body>
 </html>

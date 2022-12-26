@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>RCED HOMEPAGE</title>
+  <title>KVIC</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Construction Html5 Template">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -27,8 +27,7 @@
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
   <!--Favicon-->
-  <link rel="shortcut icon" href="{% static 'logo.png' %}" type="image/x-icon">
-  <link rel="icon" href="{% static 'logo.png' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
 
 </head>
 
@@ -54,11 +53,6 @@
             <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://instagram.com/rcedindia?igshid=YmMyMTA2M2Y="><i class="ti-instagram"></i></a></li>
           </ul>
         </div>
-        <div class="col-lg-8 text-center text-lg-right">
-          <ul class="list-inline">
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#loginModal" data-toggle="modal" data-target="#loginModal">login</a></li>
-          </ul>
-        </div>
       </div>
     </div>
   </div>
@@ -75,60 +69,13 @@
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="{% url 'homepage' %}">Home</a>
             </li>
-            <li class="nav-item dropdown view">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  About Us
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="teacher.html">RCED Profile</a></li>
-                  <li><a class="dropdown-item" href="teacher-single.html">Our Goals</a></li>
-                  <li><a class="dropdown-item" href="notice.html">Key Professionals</a></li>
-                  <li><a class="dropdown-item" href="notice-single.html">Testimonials</a></li>
-                  <li><a class="dropdown-item" href="research.html">FAQ</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown view">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Our Expertise
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="teacher.html">Skill Development</a></li>
-                  <li><a class="dropdown-item" href="teacher-single.html">Entrepreneurship Development</a>
-                    <li class="dropdown-item dropdown dropleft">
-                        <a class="dropdown-toggle" href="#" id="navbarDropdownSubmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Sub Menu
-                        </a>
-                        <ul class="dropdown-menu dropdown-submenu" aria-labelledby="navbarDropdownSubmenu">
-                          <li><a class="dropdown-item" href="#!">Entrepreneurship Awreness Camp</a></li>
-                          <li><a class="dropdown-item" href="#!">Open Learning Program</a></li>
-                          <li><a class="dropdown-item" href="#!">Entrepreneurship Development Program</a></li>
-                        </ul>
-                      </li>
-                    </li>
-                  <li><a class="dropdown-item" href="notice.html" >Start-Up Support</a></li>
-                  <li class="dropdown-item dropdown dropleft">
-                    <a class="dropdown-toggle" href="#" id="navbarDropdownSubmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Sub Menu
-                    </a>
-                    <ul class="dropdown-menu dropdown-submenu" aria-labelledby="navbarDropdownSubmenu">
-                      <li><a class="dropdown-item" href="#!">Project Consultancy</a></li>
-                      <li><a class="dropdown-item" href="#!">Market Feasibility Study</a></li>
-                      <li><a class="dropdown-item" href="#!">Techno Economic Feasibility Study</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="notice-single.html">Capacity Building</a></li>
-                  <li><a class="dropdown-item" href="research.html">Research and Evaluation</a></li>
-                  <li><a class="dropdown-item" href="scholarship.html">Placement Services</a></li>
-                  <li><a class="dropdown-item" href="course-single.html">Management Internship</a></li>
-                </ul>
-              </li>
             <li class="nav-item @@events">
               <a class="nav-link" href="{% url 'courses' %}">Courses</a>
             </li>
             <li class="nav-item @@blog">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="#footer">Contact</a>
             </li>
           </ul>
         </div>
@@ -169,7 +116,7 @@
     <div class="row">
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb mb-2">
-          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="courses.html">Our Projects</a></li>
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="">Our Projects</a></li>
           <li class="list-inline-item text-white h3 font-secondary nasted">Khadi and Village Industries Commission (KVIC)</li>
         </ul>
       </div>
@@ -185,15 +132,15 @@ Khadi Village Industries Commission has been established under an act of Parliam
 
 Being an empanelled training partner, RCED organizes the following programs for officials of the implementing partners of the PMEGP scheme viz. KVIC, KVIB, RSETIs, DIC and banks:
             <ul>
-                <li><b>Training and Orientation Programs </b>for discussing the new initiatives taken by the Government and KVIC to promote the PMEGP.</li>
-                <li><b>Bankers Meetings</b> to assess and review the progress of PMEGP cases.</li>
-                <li><b>Awareness Programs</b> with respect to the PMEGP scheme for existing and prospective entrepreneurs as well as other beneficiaries.</li>
-                <li><b>Potter Training Programs</b> for apprising the potters of this scheme, its limits, legal formalities as well as how they can benefit from it.</li>
+                <li><b>1. Training and Orientation Programs </b>for discussing the new initiatives taken by the Government and KVIC to promote the PMEGP.</li>
+                <li><b>2. Bankers Meetings</b> to assess and review the progress of PMEGP cases.</li>
+                <li><b>3. Awareness Programs</b> with respect to the PMEGP scheme for existing and prospective entrepreneurs as well as other beneficiaries.</li>
+                <li><b>4. Potter Training Programs</b> for apprising the potters of this scheme, its limits, legal formalities as well as how they can benefit from it.</li>
             </ul>
              </p>
       </div>
 </div>
-  <div class="footer bg-footer section border-bottom ">
+  <div class="footer bg-footer section border-bottom " id="footer">
     <div class="container">
         <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0 ">
           <!-- logo -->

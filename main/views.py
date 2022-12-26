@@ -149,6 +149,7 @@ def getdata(request):
     )
     students = Childern.objects.all()
     writer = csv.writer(response)
+    writer.writerow(['ID','Name','Date of birth', 'Email', 'Mobile','Address', 'Course'])
     for student in students:
         writer.writerow([student.id,student.name,student.dob, student.email, student.mobile, student.add,student.course])
     return response

@@ -15,8 +15,8 @@ def studentcourse(request, id):
     return render(request, 'stucourse.html')
 
 def logout(request):
-    if (Childern.objects.filter(id = id).exists()):
-        cvar= Childern.objects.get(id = id)
-        cvar.status = False
-        return render(request, 'index.html')
-    return render(request, 'studentdashboard.html')
+    # if (Childern.objects.filter(id = id).exists()):
+    #     cvar= Childern.objects.get(id = id)
+    #     cvar.status = False
+    #     return render(request, 'index.html')
+    return render(request, 'index.html')

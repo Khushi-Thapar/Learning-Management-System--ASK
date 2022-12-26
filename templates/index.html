@@ -27,8 +27,7 @@
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
   <!--Favicon-->
-  <link rel="shortcut icon" href="{% static 'logo.png' %}" type="image/x-icon">
-  <link rel="icon" href="{% static 'logo.png' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
 
 </head>
 
@@ -224,9 +223,6 @@
           <div class="d-flex align-items-center section-title justify-content-between">
             <h2 class="mb-0 text-nowrap mr-3">Latest Projects</h2>
             <div class="border-top w-100 border-primary d-none d-sm-block"></div>
-            <div>
-              <a href="courses.html" class="btn btn-sm btn-outline-primary ml-sm-3 d-none d-sm-block">see all</a>
-            </div>
           </div>
         </div>
       </div>
@@ -237,7 +233,7 @@
       <div class="card p-0 border-primary rounded-0 hover-shadow">
         <img class="card-img-top rounded-0" src="{% static 'PDOT.jpeg' %}" alt="course thumb">
         <div class="card-body">
-          <a href="course-single.html">
+          <a href="">
             <h4 class="card-title"> Pre-departure Orientation Training (PDOT)</h4>
           </a>
           <a href="{% url 'pdot' %}" class="btn btn-primary btn-sm">Read More</a>
@@ -249,7 +245,7 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'PCRA.jpeg' %}" alt="course thumb">
           <div class="card-body">
-            <a href="course-single.html">
+            <a href="">
               <h4 class="card-title"> Petroleum Conservation Research Association (PCRA)</h4>
             </a>
             <a href="{% url 'pcra' %}" class="btn btn-primary btn-sm">Read More</a>
@@ -261,7 +257,7 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'dummy.jpeg' %}" alt="course thumb">
           <div class="card-body">
-            <a href="course-single.html">
+            <a href="">
               <h4 class="card-title"> Khadi and Village Industries Commisiion (KVIC)</h4>
             </a>
             <a href="{% url 'kvic' %}" class="btn btn-primary btn-sm">Read More</a>
@@ -273,7 +269,7 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'nulm.JPG' %}" alt="course thumb">
           <div class="card-body">
-            <a href="course-single.html">
+            <a href="">
               <h4 class="card-title"> DAY-NULM under Municipal Corporation Chandigarh</h4>
             </a>
             <a href="{% url 'nulm' %}" class="btn btn-primary btn-sm">Read More</a>
@@ -285,7 +281,7 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'ircon.jpg' %}" alt="course thumb">
           <div class="card-body">
-            <a href="course-single.html">
+            <a href="">
               <h4 class="card-title"> IRCON Sponsored Skill Training Programs</h4>
             </a>
             <a href="{% url 'ircon' %}" class="btn btn-primary btn-sm">Read More</a>
@@ -297,7 +293,7 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'tmf.JPG' %}" alt="course thumb">
           <div class="card-body">
-            <a href="course-single.html">
+            <a href="">
               <h4 class="card-title"> Tech Mahindra Foundation (TMF): SMART & SMART-T</h4>
             </a>
             <a href="{% url 'tmf' %}" class="btn btn-primary btn-sm">Read More</a>
@@ -305,15 +301,7 @@
         </div>
       </div>
   </div>
-  <!-- /course list -->
-      <!-- mobile see all button -->
-      <div class="row">
-        <div class="col-12 text-center">
-          <a href="courses.html" class="btn btn-sm btn-outline-primary d-sm-none d-inline-block">sell all</a>
-        </div>
-      </div>
-    </div>
-  </section>
+ </section>
   <!-- /courses -->
   <!-- about us -->
 <section class="section">
@@ -348,9 +336,7 @@
       <div class="card p-0 border-primary rounded-0 hover-shadow">
         <img class="card-img-top rounded-0" src="{% static 'mi.jpg' %}" alt="course thumb">
         <div class="card-body">
-          <a href="#">
             <h4 class="card-title"> Management Internships</h4>
-          </a>
         </div>
       </div>
     </div>
@@ -359,9 +345,9 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'sd.JPG' %}" alt="course thumb">
           <div class="card-body">
-            <a href="#">
+            
               <h4 class="card-title"> Skill Development</h4>
-            </a>
+            
           </div>
         </div>
       </div>
@@ -370,9 +356,9 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'ed.JPG' %}" alt="course thumb">
           <div class="card-body">
-            <a href="#">
+
               <h4 class="card-title"> Entrepreneurship Development</h4>
-            </a>
+          
           </div>
         </div>
       </div>
@@ -381,9 +367,7 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'ss.JPG' %}" alt="course thumb">
           <div class="card-body">
-            <a href="#">
               <h4 class="card-title"> Start-up Support</h4>
-            </a>
           </div>
         </div>
       </div>
@@ -392,9 +376,7 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'cb.JPG' %}" alt="course thumb">
           <div class="card-body">
-            <a href="#">
               <h4 class="card-title"> Capacity Building</h4>
-            </a>
           </div>
         </div>
       </div>
@@ -403,9 +385,7 @@
         <div class="card p-0 border-primary rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="{% static 'rae.jpeg' %}" alt="course thumb">
           <div class="card-body">
-            <a href="#">
               <h4 class="card-title"> Research and Evaluation</h4>
-            </a>
           </div>
         </div>
       </div>
