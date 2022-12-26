@@ -23,6 +23,7 @@ urlpatterns = [
     path('delete1/<int:id>', views.delete1, name='delete1'),
     path('validiate/', views.validiate, name = "validiate"),
     path('back/', views.back, name = "back"),
+    path('notification/', views.notification, name = "notification"),
     path('upload/<int:id>/', views.upload, name = 'upload'),
     path('home/', views.home, name="home"),
 ]

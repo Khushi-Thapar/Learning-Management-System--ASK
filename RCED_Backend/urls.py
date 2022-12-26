@@ -31,5 +31,7 @@ urlpatterns = [
     path("Adminhome/", views.Adminhome, name='Admin-login'),
     path('logout/', include("students.urls")),
     path('students/', include("students.urls")),
-    path('home/', include("main.urls"))
+    path('home/', include("main.urls")),
+    path('notification/', include("main.urls"))
+
 ]

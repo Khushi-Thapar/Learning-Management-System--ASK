@@ -176,3 +176,6 @@ def upload(request, id):
 #         else:
 #             form = upload()
 #             return render(request, 'Admin-home.html', {'form': form})
+
+def notification(request):
+    return render(request, 'notice.html')
