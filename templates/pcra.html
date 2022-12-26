@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RCED HOMEPAGE</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="RCED">
+  <meta name="generator" content="RCED v1.0">
+  <meta name="theme-name" content="RCED" />
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <!-- animation css -->
+  <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+  <!-- aos -->
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="{%  static 'plugins/venobox/venobox.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{% static 'logo.png' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'logo.png' %}" type="image/x-icon">
+
+</head>
+
+<body>
+<!--  &lt;!&ndash; preloader start &ndash;&gt;-->
+<!--  <div class="preloader">-->
+<!--    <img src="{% static 'images/preloader.gif' %}" alt="preloader">-->
+<!--  </div>-->
+<!--  &lt;!&ndash; preloader end &ndash;&gt;-->
+
+
+<!-- header -->
+<header class="fixed-top header">
+  <!-- top header -->
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-4 text-center text-lg-left">
+          <a class="text-color mr-3" href="tel:+911722601648"><strong>CALL</strong> +91 172 2601648</a>
+          <ul class="list-inline d-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://www.facebook.com/rced.india"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://twitter.com/intent/tweet?text=Contact%20%E2%80%93%20RCED&url=https%3A%2F%2Frcedindia.com%2Fcontact%2F%23.Y2X-9ISTMXh.twitter&related="><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://instagram.com/rcedindia?igshid=YmMyMTA2M2Y="><i class="ti-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#loginModal" data-toggle="modal" data-target="#loginModal">login</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- navbar -->
+  <div class="navigation w-100">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown view">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  About Us
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="teacher.html">RCED Profile</a></li>
+                  <li><a class="dropdown-item" href="teacher-single.html">Our Goals</a></li>
+                  <li><a class="dropdown-item" href="notice.html">Key Professionals</a></li>
+                  <li><a class="dropdown-item" href="notice-single.html">Testimonials</a></li>
+                  <li><a class="dropdown-item" href="research.html">FAQ</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown view">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Our Expertise
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="teacher.html">Skill Development</a></li>
+                  <li><a class="dropdown-item" href="teacher-single.html">Entrepreneurship Development</a>
+                    <li class="dropdown-item dropdown dropleft">
+                        <a class="dropdown-toggle" href="#" id="navbarDropdownSubmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Sub Menu
+                        </a>
+                        <ul class="dropdown-menu dropdown-submenu" aria-labelledby="navbarDropdownSubmenu">
+                          <li><a class="dropdown-item" href="#!">Entrepreneurship Awreness Camp</a></li>
+                          <li><a class="dropdown-item" href="#!">Open Learning Program</a></li>
+                          <li><a class="dropdown-item" href="#!">Entrepreneurship Development Program</a></li>
+                        </ul>
+                      </li>
+                    </li>
+                  <li><a class="dropdown-item" href="notice.html" >Start-Up Support</a></li>
+                  <li class="dropdown-item dropdown dropleft">
+                    <a class="dropdown-toggle" href="#" id="navbarDropdownSubmenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Sub Menu
+                    </a>
+                    <ul class="dropdown-menu dropdown-submenu" aria-labelledby="navbarDropdownSubmenu">
+                      <li><a class="dropdown-item" href="#!">Project Consultancy</a></li>
+                      <li><a class="dropdown-item" href="#!">Market Feasibility Study</a></li>
+                      <li><a class="dropdown-item" href="#!">Techno Economic Feasibility Study</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="notice-single.html">Capacity Building</a></li>
+                  <li><a class="dropdown-item" href="research.html">Research and Evaluation</a></li>
+                  <li><a class="dropdown-item" href="scholarship.html">Placement Services</a></li>
+                  <li><a class="dropdown-item" href="course-single.html">Management Internship</a></li>
+                </ul>
+              </li>
+            <li class="nav-item @@events">
+              <a class="nav-link" href="{% url 'courses' %}">Courses</a>
+            </li>
+            <li class="nav-item @@blog">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- /header -->
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/Adminhome/" method="post" class="row"> {% csrf_token %}
+
+                    <div class="col-12">
+                            <input type="email" class="form-control mb-3" id="signupEmail" name="LoginEmail" placeholder="Email">
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb mb-2">
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="courses.html">Our Projects</a></li>
+          <li class="list-inline-item text-white h3 font-secondary nasted">Petroleum Conservation Research Association (PCRA)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="row">
+      <div class="col-12 mb-4">
+        <h3>About PDOT</h3>
+        <p>Under PCRA, we organize sponsored Awareness Programs and Training Workshops for farmers, youth, rural women and truck operators to raise awareness on the optimum use of fuel. 
+
+            Petroleum Research Conservation Association is a government agency established under the Ministry of Petroleum and Natural Gas. The aim of the organization is to spread awareness on how energy can be conserved and its use be limited thereby reducing the overall dependence on petroleum products. It offers policy making support to the Government in terms of formulating strategies by suggesting measures for petroleum conservation. PCRA also promotes research and development activities for devising environment friendly products thereby fostering energy efficiency and sustainable development.
+            
+            For furthering its vision and mission, RCED conducts the following activities on behalf of PCRA:
+            <ul>
+                <li>Training and Capacity Building Programs, Seminars and Workshops in various institutes and industries.</li>
+                <li>Driver Training Programs, Transport Workshop and Training for Driver Training Instructors.</li>
+                <li>Kisan Melas, Agriculture Workshops for Farmers and Educational Programs with Krishi Vigyan Kendras.</li>
+                <li> Institutional Awareness Programs with Mahila Mandals, Youth Forums, Residents Welfare Associations.</li>
+                <li>Field Exhibitions for awareness of the general public.</li>
+            </ul>
+             </p>
+      </div>
+</div>
+  <div class="footer bg-footer section border-bottom ">
+    <div class="container">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0 ">
+          <!-- logo -->
+          <h3 style="color:White;">Stay In Touch</h3><br>
+          <img class="img-fluid mb-4" src="{% static 'images/logo.png' %}" alt="logo">
+          <ul class="list-unstyled">
+            <li class="mb-2">SCO:315-316, Top floor, 35B, Himalaya Marg, Sector 35B, Chandigarh, 160035</li>
+            <li class="mb-2"><a class="text-color mr-3" href="tel:+911722601648">+91 172 2601648</a></li>
+            <li class="mb-2"><a class="text-color mr-3" href="tel:+911722612669">+91 172 2612669</a></li>
+            <li class="mb-2"><a class="text-color mr-3" href="tel:+919814888119">+91 9814888119</a></li>
+            <li class="mb-2"><a class="text-color mr-3" href="mailto:rcedindia@gmail.com">rcedindia@gmail.com</a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <!-- copyright -->
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7 text-sm-left text-center">
+          <p class="mb-0">Copyright &copy;
+            <script>
+              var CurrentYear = new Date().getFullYear()
+              document.write(CurrentYear)
+            </script>
+          </p>
+        </div>
+        <div class="col-sm-5 text-sm-right text-center">
+          <ul class="list-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://www.facebook.com/rced.india"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://twitter.com/intent/tweet?text=Contact%20%E2%80%93%20RCED&url=https%3A%2F%2Frcedindia.com%2Fcontact%2F%23.Y2X-9ISTMXh.twitter&related="><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://instagram.com/rcedindia?igshid=YmMyMTA2M2Y="><i class="ti-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->

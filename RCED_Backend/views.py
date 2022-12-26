@@ -40,3 +40,20 @@ def stuhome(request, id):
     cvar = Childern.objects.get(id = id)
 
     return render(request, 'studentdashboard.html', {'cvar': cvar})
+def pdot(request):
+    return render(request, 'pdot.html')
+
+def ircon(request):
+    return render(request, 'ircon.html')
+
+def kvic(request):
+    return render(request, 'kvic.html')
+
+def nulm(request):
+    return render(request, 'nulm.html')
+
+def pcra(request):
+    return render(request, 'pcra.html')
+
+def tmf(request):
+    return render(request, 'tmf.html')
