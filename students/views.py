@@ -20,3 +20,21 @@ def logout(request):
     #     cvar.status = False
     #     return render(request, 'index.html')
     return render(request, 'index.html')
+
+def changepassword(request, id):
+    cvar = Childern.objects.get(id = id)
+    return render(request, 'changepassword.html', {'cvar':cvar})
+
+def updatepassword(request, id):
+    if (Childern.objects.filter(id=id).exists()):
+        cvar = Childern.objects.get(id = id)
+        oldpass = cvar.pas
+        newpas = request.POST.get('newpass')
+        if (request.POST.get('oldpass')==oldpass):
+            cvar.pas = newpas
+            cvar.save()
+    return render(request, 'studentdashboard.html', {'cvar': cvar})
+
+def back(request, id):
+    cvar = Childern.objects.get(id=id)
+    return render(request, 'studentdashboard.html', {'cvar': cvar})
