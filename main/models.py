@@ -9,6 +9,10 @@ class Course(models.Model):
     def __str__(self) -> str:
         return self.course_name+" "+self.course_id
 
+class Notices(models.Model):
+    course_id = models.ForeignKey(Course, null=True, on_delete=models.CASCADE)
+    notice = models.TextField(default="NULL")
+
 class Childern(models.Model):
     course = models.ForeignKey(Course, null=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, null=True)

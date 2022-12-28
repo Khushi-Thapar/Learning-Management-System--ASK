@@ -7,14 +7,15 @@
   <!-- Basic Page Needs
 	================================================== -->
   <meta charset="utf-8">
-  <title>Student Dashboard</title>
+  <title>View Notices</title>
 
   <!-- Mobile Specific Metas
 	================================================== -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Construction Html5 Template">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
+  <meta name="author" content="RCED">
+  <meta name="generator" content="RCED v1.0">
 
   <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
@@ -61,7 +62,7 @@
         </div>
         <div class="col-lg-8 text-center text-lg-right">
           <ul class="list-inline">
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'changepassword' cvar.id %}" >Change Password</a></li>
+
           </ul>
         </div>
       </div>
@@ -79,7 +80,7 @@
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item @@home">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="{% url 'back' %}">Home</a>
             </li>
             <li class="nav-item @@about">
               <a class="nav-link" href="#contact">Contact</a>
@@ -87,9 +88,7 @@
             <li class="nav-item @@courses">
               <a class="nav-link" href="#courses">COURSES</a>
             </li>
-            <li class="nav-item @@courses">
-              <a class="nav-link" href="{% url 'viewnotices' a.id %}" >NOTICES</a>
-            </li>
+
             <li class="nav-item @@courses">
               <a class="nav-link" href="#logout" data-toggle="modal" data-target="#logout">Logout</a>
             </li>
@@ -128,7 +127,9 @@
     <div class="row">
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb mb-2">
-          <li class="list-inline-item h2 text-primary font-secondary">Student Dashboard</li>
+
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary">Notices for {{cid}} </a></li>
+
         </ul>
       </div>
     </div>
@@ -136,50 +137,66 @@
 </section>
 <!-- /page title -->
 
-<!-- teacher details -->
-<section class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 mb-5">
-        <h3>Welcome {{cvar.name}}</h3><br><br> 
-        <div class="row">
-          <div class="col-md-6 mb-5 mb-md-0">
-            <h4 class="mb-4">CONTACT INFO:</h4>
-            <ul class="list-unstyled">
-              <li class="mb-3"><a class="text-color" href="mailto:{{cvar.email}}"><i class="ti-email mr-2"></i>{{cvar.email}}</a></li>
-              <li class="mb-3"><a class="text-color" href="tel:+91 {{cvar.mobile}}"><i class="ti-mobile mr-2"></i>{{cvar.mobile}}</a></li>
-            </ul>
-          </div>
 
-        </div>
-      </div>
-    </div>
+<br>
+<div class="student">
+  <table class="table table-warning mt-2" border="1">
+    <thead>
+      <tr class="table-warning">
+        <th scope="col">Notice</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for notice in notices %}
+      <tr>
+        <td>{{ notice.notice }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+  </div>
+<!-- footer -->
+<footer>
 
-<div id = 'courses'></div>
-    <br><br>
-    <div class="row justify-content-center">
-      <div class="col-12">
-        <h4 class="mb-4">COURSES</h4>
-      </div>
-      <!-- course item -->
-      <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <div class="card-body">
-            <ul class="list-inline mb-2">
-              <li class="list-inline-item"><a class="text-color" href="{{ a.link }}"><b>{{cvar.course}}</b></a></li>
-            </ul>
-          </div>
+  <!-- footer content -->
+  <div class="footer bg-footer section border-bottom ">
+    <div class="container">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0 ">
+          <!-- logo -->
+          <h3 style="color:White;">Stay In Touch</h3><br>
+          <img class="img-fluid mb-4" src="{% static 'images/logo.png' %}" alt="logo">
+          <ul class="list-unstyled">
+            <li class="mb-2">SCO:315-316, Top floor, 35B, Himalaya Marg, Sector 35B, Chandigarh, 160035</li>
+            <li class="mb-2"><a class="text-color mr-3" href="tel:+911722601648">+91 172 2601648</a></li>
+            <li class="mb-2"><a class="text-color mr-3" href="tel:+911722612669">+91 172 2612669</a></li>
+            <li class="mb-2"><a class="text-color mr-3" href="tel:+919814888119">+91 9814888119</a></li>
+            <li class="mb-2"><a class="text-color mr-3" href="mailto:rcedindia@gmail.com">rcedindia@gmail.com</a></li>
+          </ul>
         </div>
-      </div>
-      <!-- course item -->
-      <!-- course item -->
     </div>
   </div>
-</section>
-<!-- /teacher details -->
-
-<div id = 'contact'></div>
-<!-- footer -->
+  <!-- copyright -->
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7 text-sm-left text-center">
+          <p class="mb-0">Copyright &copy;
+            <script>
+              var CurrentYear = new Date().getFullYear()
+              document.write(CurrentYear)
+            </script>
+          </p>
+        </div>
+        <div class="col-sm-5 text-sm-right text-center">
+          <ul class="list-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://www.facebook.com/rced.india"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://twitter.com/intent/tweet?text=Contact%20%E2%80%93%20RCED&url=https%3A%2F%2Frcedindia.com%2Fcontact%2F%23.Y2X-9ISTMXh.twitter&related="><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://instagram.com/rcedindia?igshid=YmMyMTA2M2Y="><i class="ti-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 <footer>
 
   <!-- footer content -->

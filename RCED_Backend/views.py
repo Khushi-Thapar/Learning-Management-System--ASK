@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from main.models import Childern
 from main.models import Course
+from main.models import Notices
 # Create your views here.
 
 def index(request):
@@ -20,6 +21,7 @@ def Adminhome(request):
         text = str(data)
         text1 = text.split()
         a = Course.objects.get(course_id = text1[1])
+        print(a.link)
         if(cvar.status == False):
             cvar.status = True
         context = {}

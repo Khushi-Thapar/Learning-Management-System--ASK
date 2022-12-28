@@ -7,6 +7,7 @@ from .models import Childern
 from .models import Course
 from django.http import HttpResponse
 import csv
+from .models import Notices
 # Create your views here.
 
 
@@ -190,6 +191,14 @@ def pushnotice(request):
     cid = request.POST.get('course')
     msg = request.POST.get('notice')
     c = Course.objects.get(course_id = cid)
-    c.notice = msg
-    c.save()
+    data = Notices(course_id=c, notice = msg)
+    data.save()
+    return render(request, 'Admin-home.html')
+
+def newstu(request):
+    if request.method == "POST":
+
+        c = Course.objects.get(course_id = course)
+        data = Childern(course = c, name=name, dob=dob, email=email, pas = pas, mobile = mob, add = ad)
+        data.save()
     return render(request, 'Admin-home.html')

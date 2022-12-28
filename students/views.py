@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from main.models import Childern
+from main.models import Notices
+from main.models import Course
 from RCED_Backend.views import Adminhome
 
 # Create your views here.
@@ -38,3 +40,13 @@ def updatepassword(request, id):
 def back(request, id):
     cvar = Childern.objects.get(id=id)
     return render(request, 'studentdashboard.html', {'cvar': cvar})
+
+
+def viewnotices(request, id):
+    notices = Notices.objects.filter(course_id = id)
+    c = Course.objects.get(id = id)
+    cid = c.course_id
+    context = {}
+    context.update({'notices':notices})
+    context.update({'cid': cid})
+    return render(request, 'viewnotices.html', context)
