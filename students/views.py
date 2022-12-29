@@ -39,7 +39,17 @@ def updatepassword(request, id):
 
 def back(request, id):
     cvar = Childern.objects.get(id=id)
-    return render(request, 'studentdashboard.html', {'cvar': cvar})
+    data = cvar.course
+    text = str(data)
+    text1 = text.split()
+    a = Course.objects.get(course_id=text1[1])
+    print(a.link)
+    if (cvar.status == False):
+        cvar.status = True
+    context = {}
+    context.update({'cvar': cvar})
+    context.update({'a': a})
+    return render(request, 'studentdashboard.html', context)
 
 
 def viewnotices(request, id):
