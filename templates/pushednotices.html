@@ -1,0 +1,234 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+	================================================== -->
+  <meta charset="utf-8">
+  <title>View Students</title>
+
+  <!-- Mobile Specific Metas
+	================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Construction Html5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="RCED">
+  <meta name="generator" content="RCED v1.0">
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <!-- animation css -->
+  <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+  <!-- aos -->
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="{%  static 'plugins/venobox/venobox.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+
+</head>
+
+<body>
+  <!-- preloader start -->
+  <div class="preloader">
+    <img src="{% static 'images/preloader.gif' %}" alt="preloader">
+  </div>
+  <!-- preloader end -->
+
+<!-- header -->
+<header class="fixed-top header">
+  <!-- top header -->
+  <div class="top-header py-2 bg-white">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-4 text-center text-lg-left">
+          <a class="text-color mr-3" href="tel:+911722601648"><strong>CALL</strong> +91 172 2601648</a>
+          <ul class="list-inline d-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://www.facebook.com/rced.india"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://twitter.com/intent/tweet?text=Contact%20%E2%80%93%20RCED&url=https%3A%2F%2Frcedindia.com%2Fcontact%2F%23.Y2X-9ISTMXh.twitter&related="><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://instagram.com/rcedindia?igshid=YmMyMTA2M2Y="><i class="ti-instagram"></i></a></li>
+          </ul>
+</div>
+      </div>
+    </div>
+  </div>
+  <!-- navbar -->
+  <div class="navigation w-100">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+        <a class="navbar-brand" ><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto text-center">
+            <li class="nav-item @@home">
+              <a class="nav-link" href="{% url 'mainIndex' %}">Home</a>
+            </li>
+            <li class="nav-item dropdown view">
+              <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                STUDENTS
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'addstudent' %}">Add Student</a></li>
+                <li><a class="dropdown-item" href="{% url 'modifystudent' %}">Modify Student Details</a></li>
+                <li><a class="dropdown-item" href="{% url 'studentlist' %}">View Enrolled Students</a></li>
+              </ul>
+             </li>
+            <li class="nav-item dropdown view">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                COURSES
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'addcourse' %}">Add Course</a></li>
+                <li><a class="dropdown-item" href="{% url 'modifycourse' %}">Modify Course</a></li>
+                <li><a class="dropdown-item" href="{% url 'courselist' %}">View Courses</a></li>
+              </ul>
+             </li>
+            <li class="nav-item @@events">
+              <a class="nav-link" href="events.html">NOTICE</a>
+            </li>
+            <li class="nav-item @@courses">
+              <a class="nav-link" href="#logout" data-toggle="modal" data-target="#logout">LOGOUT</a>
+            </li>
+          </ul></div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- /header -->
+<!-- page title -->
+
+<!-- Modal -->
+<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Confirm logout action</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'home' %}" class="row">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">LOGOUT</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="{% static 'images/backgrounds/page-title.jpg' %}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb mb-2">
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary">Notices for {{cid}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<br>
+<div class="student">
+  <table class="table table-warning mt-2" border="1">
+    <thead>
+      <tr class="table-warning">
+        <th scope="col">Notice</th>
+        <th scope="col">Delete Notice</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for notice in notices %}
+      <tr>
+        <td>{{ notice.notice }}</td>
+        <td><a href="{% url 'deletenotice' notice.id %}">Remove</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+  </div>
+<!-- footer -->
+<footer>
+
+  <!-- footer content -->
+  <div class="footer bg-footer section border-bottom ">
+    <div class="container">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0 ">
+          <!-- logo -->
+          <h3 style="color:White;">Stay In Touch</h3><br>
+          <img class="img-fluid mb-4" src="{% static 'images/logo.png' %}" alt="logo">
+          <ul class="list-unstyled">
+            <li class="mb-2">SCO:315-316, Top floor, 35B, Himalaya Marg, Sector 35B, Chandigarh, 160035</li>
+            <li class="mb-2"><a class="text-color mr-3" href="tel:+911722601648">+91 172 2601648</a></li>
+            <li class="mb-2"><a class="text-color mr-3" href="tel:+911722612669">+91 172 2612669</a></li>
+            <li class="mb-2"><a class="text-color mr-3" href="tel:+919814888119">+91 9814888119</a></li>
+            <li class="mb-2"><a class="text-color mr-3" href="mailto:rcedindia@gmail.com">rcedindia@gmail.com</a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <!-- copyright -->
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7 text-sm-left text-center">
+          <p class="mb-0">Copyright &copy;
+            <script>
+              var CurrentYear = new Date().getFullYear()
+              document.write(CurrentYear)
+            </script>
+          </p>
+        </div>
+        <div class="col-sm-5 text-sm-right text-center">
+          <ul class="list-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://www.facebook.com/rced.india"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://twitter.com/intent/tweet?text=Contact%20%E2%80%93%20RCED&url=https%3A%2F%2Frcedindia.com%2Fcontact%2F%23.Y2X-9ISTMXh.twitter&related="><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://instagram.com/rcedindia?igshid=YmMyMTA2M2Y="><i class="ti-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+<!-- slick slider -->
+<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+<!-- aos -->
+<script src="{% static 'plugins/aos/aos.js' %}"></script>
+<!-- venobox popup -->
+<script src="{% static 'plugins/venobox/venobox.min.js' %}"></script>
+<!-- filter -->
+<script src="{% static 'plugins/filterizr/jquery.filterizr.min.js' %}"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
+<script src="{% static 'plugins/google-map/gmap.js' %}"></script>
+
+<!-- Main Script -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
