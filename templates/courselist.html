@@ -156,6 +156,7 @@
         <th scope="col">Course ID</th>
         <th scope="col">Delete Courses</th>
         <th scope="col">Upload</th>
+        <th scope="col">Notices</th>
       </tr>
     </thead>
     <tbody>
@@ -166,6 +167,7 @@
       <td>{{ course.course_id }}</td>
       <td><a href="{% url 'delete1' course.id %}">delete</a></td>
       <td><a href="{{ course.link }}">Access Course</a></td>
+      <td><a href="{% url 'pushednotices' course.id %}">View Notices</a></td>
       </tr>
     {% endfor %}
     </tbody>

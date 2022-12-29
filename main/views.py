@@ -202,3 +202,18 @@ def newstu(request):
         data = Childern(course = c, name=name, dob=dob, email=email, pas = pas, mobile = mob, add = ad)
         data.save()
     return render(request, 'Admin-home.html')
+
+
+def pushednotices(request, id):
+    notices = Notices.objects.filter(course_id = id)
+    c = Course.objects.get(id = id)
+    cid = c.course_id
+    context = {}
+    context.update({'notices':notices})
+    context.update({'cid': cid})
+    return render(request, 'pushednotices.html', context)
+
+def deletenotice(request, id):
+  member = Notices.objects.get(id=id)
+  member.delete()
+  return render(request, 'Admin-home.html')
