@@ -22,3 +22,9 @@ class Childern(models.Model):
     mobile = models.IntegerField()
     add = models.TextField()
     status = models.BooleanField(default = False)
+
+class Admin(models.Model):
+    name = models.CharField(max_length=50)
+    mobile = models.IntegerField()
+    email = models.CharField(max_length=50)
+    pas = models.CharField(max_length=200)

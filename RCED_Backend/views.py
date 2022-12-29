@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from main.models import Childern
 from main.models import Course
+from main.models import Admin
 from main.models import Notices
 # Create your views here.
 
@@ -13,7 +14,7 @@ def Adminhome(request):
     mail = (request.POST.get('LoginEmail'))
     print(mail)
     pas = (request.POST.get('loginPassword'))
-    if mail == 'admin@gmail.com' and pas == 'admin':
+    if (Admin.objects.filter(email = mail, pas=pas).exists()):
         return render(request, 'Admin-home.html')
     if (Childern.objects.filter(email = mail, pas=pas).exists()):
         cvar = Childern.objects.get(email=mail)

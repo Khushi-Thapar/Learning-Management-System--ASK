@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import Childern
 from .models import Course
+from .models import Admin
 from django.http import HttpResponse
 import csv
 from .models import Notices
@@ -217,3 +218,20 @@ def deletenotice(request, id):
   member = Notices.objects.get(id=id)
   member.delete()
   return render(request, 'Admin-home.html')
+
+def changeadminpassword(request):
+    return render(request, 'changeadminpass.html')
+
+def updateadminpass(request):
+    if request.method == "POST":
+        mail = request.POST.get('email')
+        newpass = request.POST.get('newpass')
+        if (Admin.objects.filter(email = mail).exists()):
+            t = Admin.objects.get(email = mail)
+            oldpass = t.pas
+
+            if (request.POST.get('oldpass') == oldpass):
+                t.pas = newpass
+                t.save()
+    return render(request, 'Admin-home.html')
+
