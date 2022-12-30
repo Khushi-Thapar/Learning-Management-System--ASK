@@ -60,3 +60,10 @@ def pcra(request):
 
 def tmf(request):
     return render(request, 'tmf.html')
+
+def attendance(request):
+    return render(request, 'attend.html')
+
+def grades(request):
+    return render(request, 'grades.html')
+

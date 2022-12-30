@@ -31,4 +31,5 @@ urlpatterns = [
     path('back/', views.back, name = "back"),
     path('upload/<int:id>/', views.upload, name = 'upload'),
     path('home/', views.home, name="home"),
+
 ]

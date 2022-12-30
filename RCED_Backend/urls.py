@@ -39,5 +39,7 @@ urlpatterns = [
     path('students/', include("students.urls")),
     path('home/', include("main.urls")),
     path('stuhome/<int:id>', views.stuhome, name = "stuhome"),
-    path('notification/', include("main.urls"))
+    path('notification/', include("main.urls")),
+    path('attend', views.attendance, name='attend'),
+    path('grades', views.grades, name='grades')
 ]

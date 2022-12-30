@@ -243,3 +243,4 @@ def updateadminpass(request):
                 t.save()
     return render(request, 'Admin-home.html')
 
+

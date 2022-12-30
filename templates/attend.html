@@ -7,7 +7,7 @@
   <!-- Basic Page Needs
 	================================================== -->
   <meta charset="utf-8">
-  <title>View Courses</title>
+  <title>View Students</title>
 
   <!-- Mobile Specific Metas
 	================================================== -->
@@ -79,7 +79,7 @@
               <a class="nav-link" href="{% url 'mainIndex' %}">Home</a>
             </li>
             <li class="nav-item dropdown view">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 STUDENTS
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -99,7 +99,7 @@
               </ul>
              </li>
             <li class="nav-item @@events">
-              <a class="nav-link" href="{% url 'notification' %}">NOTICE</a>
+              <a class="nav-link" href="events.html">NOTICE</a>
             </li>
             <li class="nav-item @@courses">
               <a class="nav-link" href="#logout" data-toggle="modal" data-target="#logout">LOGOUT</a>
@@ -139,44 +139,32 @@
     <div class="row">
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb mb-2">
-          <li class="list-inline-item"><a class="h2 text-primary font-secondary">Courses</a></li>
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary">Students</a></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 <!-- /page title -->
+
 <br>
-<div class="course">
+<div class="student">
   <table class="table table-warning mt-2" border="1">
     <thead>
       <tr class="table-warning">
         <th scope="col">ID</th>
-        <th scope="col">Course Name</th>
-        <th scope="col">Course ID</th>
-        <th scope="col">Delete Courses</th>
-        <th scope="col">Upload</th>
+        <th scope="col">Name</th>
         <th scope="col">Attendance</th>
-        <th scope="col">Grades</th>
-        <th scope="col">Notices</th>
+        <th scope="col">Status</th>
       </tr>
     </thead>
     <tbody>
-      {% for course in course_list %}
-      <tr>
-      <td>{{ course.id }}</td>
-      <td>{{ course.course_name }}</td>
-      <td>{{ course.course_id }}</td>
-      <td><a href="{% url 'delete1' course.id %}">delete</a></td>
-      <td><a href="{{ course.link }}">Access Course</a></td>
-      <td><a href="{%url 'attend'%}">Attendance</a></td>
-      <td><a href="{%url 'grades'%}">Grades</a></td>
-
-
-      </a></td>
-      <td><a href="{% url 'pushednotices' course.id %}">View Notices</a></td>
-      </tr>
-    {% endfor %}
+    <tr>
+      <td>1</td>
+      <td>xyz</td>
+      <td> <textarea name="attend" id="1" cols="6"></textarea></td>
+      <td> <a href="#">Ok</a> </td>
+    </tr>
     </tbody>
     </table>
   </div>
