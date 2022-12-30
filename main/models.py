@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -5,7 +7,8 @@ class Course(models.Model):
     course_name = models.CharField(max_length=200)
     course_id = models.CharField(max_length=200)
     link = models.CharField(max_length=1000, default="index.html")
-    notice = models.TextField(default="NULL")
+    start_date = models.DateField(default = datetime.date.today)
+    end_date = models.DateField(default=datetime.date.today)
     def __str__(self) -> str:
         return self.course_name+" "+self.course_id
 

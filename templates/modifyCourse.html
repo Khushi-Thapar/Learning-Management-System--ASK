@@ -23,14 +23,15 @@
     <h1 class="center">Course Modification</h1>
     <div class="center">
         <form action="{% url 'changecourse' %}" method="post" class="row"> {% csrf_token %}
-            <div class="labels">
-            <label for="courseName">Old Course Name</label>
-            <input type="text" id="courseName" name = "Cname">
-            </div>
             <div class = "labels">
             <label for="Code">Old Course Code</label>
             <input type="text" id="Code" name = "Ccode">
             </div>
+            <div class="labels">
+            <label for="courseName">Old Course Name</label>
+            <input type="text" id="courseName" name = "Cname">
+            </div>
+
             <div class="labels">
                 <label for="CodeNew">New Course Code</label>
                 <input type="text" id="CodeNew" name = "Ncode">
@@ -43,6 +44,16 @@
                 <label for="newlink">New Link</label>
                 <input type="text" id="newlink" name = "Nlink">
             </div>
+
+            <div class="labels">
+                <label for="nsdate">New Start Date</label>
+                <input type="date" id="nsdate" name = "nsdate">
+            </div>
+            <div class="labels">
+                <label for="nedate">New End Date</label>
+                <input type="date" id="nedate" name = "nedate">
+            </div>
+
             <button type="submit">Confirm</button>
             <!-- {% include 'Common/Success.html' %} -->
         </form>
