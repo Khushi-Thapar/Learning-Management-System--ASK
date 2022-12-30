@@ -5,7 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+    <!-- themefy-icon -->
+    <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+    <!-- animation css -->
+    <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+    <!-- aos -->
+    <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+    <!-- venobox popup -->
+    <link rel="stylesheet" href="{%  static 'plugins/venobox/venobox.css' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <title>Student Modification</title>
 
     <style>
@@ -24,19 +36,19 @@
     <h1 class="center">Student Details Modification</h1>
     <div class="center">
         <form action="{% url 'changestd' %}" method="post" class="row"> {% csrf_token %}
-            <div class = "labels">
+            <div class = "labels mb-3">
             <label for="Code">Student ID</label>
             <input type="text" id="Code" name="sid">
             </div>
-            <div class = "labels">
+            <div class = "labels mb-3">
             <label for="contactnew">New Contact</label>
             <input type="text" id="contactnew" name="newnum">
             </div>
-            <div class = "labels">
+            <div class = "labels mb-3">
             <label for="addnew">New Address</label>
             <input type="text" id="addnew" name = "newadd">
             </div>
-            <div class = "labels">
+            <div class = "labels mb-3">
                 <label for = "course">New Course</label>
                 <select name="newcourse" id="newcourse" >
                     {% for course in course_list %}
@@ -44,11 +56,13 @@
                     {% endfor %}
                 </select>
             </div>
-            <button type="submit">Confirm</button>
+            <div>
+                    <button type="submit" class="btn btn-primary">Confirm</button>
+            </div>
             <!-- {% include 'Common/Success.html' %} -->
         </form>
         <form action="{% url 'back' %}" method="post" class="row"> {% csrf_token %}
-            <button type="submit">Dashboard</button>
+            <button type="submit" class="btn btn-primary">Dashboard</button>
         </form>
       </div>
     <script>

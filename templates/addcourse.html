@@ -5,7 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+    <!-- themefy-icon -->
+    <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+    <!-- animation css -->
+    <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+    <!-- aos -->
+    <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+    <!-- venobox popup -->
+    <link rel="stylesheet" href="{%  static 'plugins/venobox/venobox.css' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <title>Add Course</title>
 
     <style>
@@ -23,31 +35,32 @@
     <h1 class="center">Course Details</h1>
     <div class="center">
         <form action="{% url 'newcourse' %}" method="post" class="row"> {% csrf_token %}
-            <div class="labels">
+            <div class="labels mb-3">
             <label for="cname">Course Name</label>
             <input type="text" id="cname" name = "cname">
             </div>
-            <div class = "labels">
+            <div class = "labels mb-3">
             <label for="cid">Course Id</label>
             <input type="text" id="cid" name = "cid">
             </div>
-            <div class = "labels">
+            <div class = "labels mb-3">
             <label for="clink">Course Link</label>
             <input type="text" id="clink" name = "clink">
             </div>
-            <div class = "labels">
+            <div class = "labels mb-3">
             <label for="startdate">Start Date: </label>
             <input type="date" id="startdate" name="startdate">
             </div>
-            <div class = "labels">
+            <div class = "labels mb-3">
             <label for="enddate">End Date: </label>
             <input type="date" id="enddate" name="enddate">
             </div>
-            <button type="submit">Confirm</button>
-
+            <div>
+                <button type="submit"class="btn btn-primary">Confirm</button>
+            </div>
         </form>
         <form action="{% url 'back' %}" method="post" class="row"> {% csrf_token %}
-            <button type="submit">Dashboard</button>
+            <button type="submit" class="btn btn-primary">Dashboard</button>
         </form>
       </div>
 
