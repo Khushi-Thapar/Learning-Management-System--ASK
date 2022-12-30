@@ -198,9 +198,17 @@ def pushnotice(request):
 
 def newstu(request):
     if request.method == "POST":
-
-        c = Course.objects.get(course_id = course)
-        data = Childern(course = c, name=name, dob=dob, email=email, pas = pas, mobile = mob, add = ad)
+        name = request.POST.get('name')
+        dob = request.POST.get('dob')
+        name4 = name[0:4]
+        yob = dob[0:4]
+        pas = name4 + str(yob)
+        email = request.POST.get('email')
+        mob = request.POST.get('mob')
+        ad = request.POST.get('addr')
+        course = request.POST.get('course')
+        c = Course.objects.get(course_id=course)
+        data = Childern(course=c, name=name, dob=dob, email=email, pas=pas, mobile=mob, add=ad)
         data.save()
     return render(request, 'Admin-home.html')
 
