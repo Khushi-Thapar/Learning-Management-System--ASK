@@ -5,16 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+    <!-- themefy-icon -->
+    <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+    <!-- animation css -->
+    <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+    <!-- aos -->
+    <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+    <!-- venobox popup -->
+    <link rel="stylesheet" href="{%  static 'plugins/venobox/venobox.css' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <title>Add Notification</title>
     <style>
         *{
-            margin: 9px 5px;
+            margin: 5px 5px;
         }
         .center{
-            width: 430px;
+            width: 480px;
             margin: auto;
         }
-        </style>
+    </style>
         <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
 </head>
 <body>
@@ -22,7 +35,7 @@
     <div class="center">
         <form action="{% url 'pushnotice' %}" method="post" class="row"> {% csrf_token %}
 
-            <div class = "labels">
+            <div class = "labels mb-3">
                 <label for = "course">Notice for Course</label>
                 <select name="course" id="course" >
                     {% for course in course_list %}
@@ -30,14 +43,17 @@
                     {% endfor %}
                 </select>
             </div>
+            <div class = "labels mb-3">
             <p><label for="notice">Notice </label></p>
             <textarea id="notice" name="notice" rows="4" cols="50" placeholder="Enter announcement here"> </textarea>
-
-            <button type="submit">Confirm</button>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Confirm</button>
+            </div>
 
         </form>
         <form action="{% url 'back' %}" method="post" class="row"> {% csrf_token %}
-            <button type="submit">Dashboard</button>
+            <button type="submit" class="btn btn-primary">Dashboard</button>
         </form>
       </div>
 
