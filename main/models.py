@@ -24,6 +24,8 @@ class Childern(models.Model):
     pas = models.CharField(max_length=200)
     mobile = models.IntegerField()
     add = models.TextField()
+    attendance = models.IntegerField(default= 0 )
+    progress = models.CharField(default = "PASS", max_length=100)
     status = models.BooleanField(default = False)
 
 class Admin(models.Model):

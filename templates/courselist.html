@@ -1,14 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-
   <!-- Basic Page Needs
 	================================================== -->
   <meta charset="utf-8">
   <title>View Courses</title>
-
   <!-- Mobile Specific Metas
 	================================================== -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -161,6 +158,7 @@
         <th scope="col">Attendance</th>
         <th scope="col">Grades</th>
         <th scope="col">Notices</th>
+        <th scope="col">Student Data</th>
       </tr>
     </thead>
     <tbody>
@@ -173,12 +171,10 @@
       <td>{{ course.end_date }}</td>
       <td><a href="{% url 'delete1' course.id %}">delete</a></td>
       <td><a href="{{ course.link }}">Access Course</a></td>
-      <td><a href="{%url 'attend'%}">Mark/View Attendance</a></td>
-      <td><a href="{%url 'grades'%}">Mark/View Grades</a></td>
-
-
-      </a></td>
+      <td><a href="{%url 'attend' course.id%}">Mark/View Attendance</a></td>
+      <td><a href="{%url 'grades' course.id%}">Mark/View Grades</a></td>
       <td><a href="{% url 'pushednotices' course.id %}">View Notices</a></td>
+      <td><a href="{% url 'downloadcoursecsv' course.id %}">Student Data</a></td>
       </tr>
     {% endfor %}
     </tbody>
@@ -186,48 +182,6 @@
   </div>
 <!-- footer -->
 <footer>
-
-  <!-- footer content -->
-  <div class="footer bg-footer section border-bottom ">
-    <div class="container">
-        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0 ">
-          <!-- logo -->
-          <h3 style="color:White;">Stay In Touch</h3><br>
-          <img class="img-fluid mb-4" src="{% static 'images/logo.png' %}" alt="logo">
-          <ul class="list-unstyled">
-            <li class="mb-2">SCO:315-316, Top floor, 35B, Himalaya Marg, Sector 35B, Chandigarh, 160035</li>
-            <li class="mb-2"><a class="text-color mr-3" href="tel:+911722601648">+91 172 2601648</a></li>
-            <li class="mb-2"><a class="text-color mr-3" href="tel:+911722612669">+91 172 2612669</a></li>
-            <li class="mb-2"><a class="text-color mr-3" href="tel:+919814888119">+91 9814888119</a></li>
-            <li class="mb-2"><a class="text-color mr-3" href="mailto:rcedindia@gmail.com">rcedindia@gmail.com</a></li>
-          </ul>
-        </div>
-    </div>
-  </div>
-  <!-- copyright -->
-  <div class="copyright py-4 bg-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-7 text-sm-left text-center">
-          <p class="mb-0">Copyright &copy;
-            <script>
-              var CurrentYear = new Date().getFullYear()
-              document.write(CurrentYear)
-            </script>
-          </p>
-        </div>
-        <div class="col-sm-5 text-sm-right text-center">
-          <ul class="list-inline">
-            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://www.facebook.com/rced.india"><i class="ti-facebook"></i></a></li>
-            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://twitter.com/intent/tweet?text=Contact%20%E2%80%93%20RCED&url=https%3A%2F%2Frcedindia.com%2Fcontact%2F%23.Y2X-9ISTMXh.twitter&related="><i class="ti-twitter-alt"></i></a></li>
-            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://instagram.com/rcedindia?igshid=YmMyMTA2M2Y="><i class="ti-instagram"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-<footer>
-
   <!-- footer content -->
   <div class="footer bg-footer section border-bottom ">
     <div class="container">

@@ -157,10 +157,23 @@ def getdata(request):
     )
     students = Childern.objects.all()
     writer = csv.writer(response)
-    writer.writerow(['ID','Name','Date of birth', 'Email', 'Mobile','Address', 'Course'])
+    writer.writerow(['ID','Name','Date of birth', 'Email', 'Mobile','Address', 'Course', 'Attendance', 'Progress'])
     for student in students:
-        writer.writerow([student.id,student.name,student.dob, student.email, student.mobile, student.add,student.course])
+        writer.writerow([student.id,student.name,student.dob, student.email, student.mobile, student.add,student.course, student.attendance, student.progress])
     return response
+
+def downloadcoursecsv(request, id):
+    response = HttpResponse(
+        content_type='text/csv',
+        headers={'Content-Disposition': 'attachment; filename="CourseStudents.csv"'},
+    )
+    students = Childern.objects.filter(course = id)
+    writer = csv.writer(response)
+    writer.writerow(['ID', 'Name', 'Date of birth', 'Email', 'Mobile', 'Address', 'Attendance', 'Progress'])
+    for student in students:
+        writer.writerow([student.id, student.name, student.dob, student.email, student.mobile, student.add, student.attendance, student.progress])
+    return response
+
 
 def back(request):
     return render(request, 'Admin-home.html')
@@ -249,4 +262,24 @@ def updateadminpass(request):
                 t.save()
     return render(request, 'Admin-home.html')
 
+def attendance(request, id):
+    cvar = Childern.objects.filter(course = id)
+    return render(request, 'attend.html', {'cvar':cvar})
 
+def markattend(request, id):
+    stu = Childern.objects.get(id = id)
+    attend = request.POST.get('attend')
+    stu.attendance = attend
+    stu.save()
+    return render(request, 'Admin-home.html')
+
+def grades(request, id):
+    cvar = Childern.objects.filter(course = id)
+    return render(request, 'grades.html', {'cvar':cvar})
+
+def markgrades(request, id):
+    stu = Childern.objects.get(id=id)
+    grade = request.POST.get('grade')
+    stu.progress = grade
+    stu.save()
+    return render(request, 'Admin-home.html')

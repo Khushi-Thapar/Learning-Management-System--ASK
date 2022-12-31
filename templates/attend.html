@@ -159,58 +159,22 @@
       </tr>
     </thead>
     <tbody>
+    {% for stu in cvar %}
     <tr>
-      <td>1</td>
-      <td>xyz</td>
+      <td>{{stu.id}}</td>
+      <td>{{stu.name}}</td>
+      <form action = "{% url 'markattend' stu.id %}" method="POST" class="row"> {% csrf_token %}
       <td> <textarea name="attend" id="1" cols="6"></textarea></td>
-      <td> <a href="#">Ok</a> </td>
+      <td> <button type="submit" class="btn btn-primary"> Ok </button> </td>
+      </form>
     </tr>
+    {% endfor %}
     </tbody>
     </table>
   </div>
 <!-- footer -->
 <footer>
 
-  <!-- footer content -->
-  <div class="footer bg-footer section border-bottom ">
-    <div class="container">
-        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0 ">
-          <!-- logo -->
-          <h3 style="color:White;">Stay In Touch</h3><br>
-          <img class="img-fluid mb-4" src="{% static 'images/logo.png' %}" alt="logo">
-          <ul class="list-unstyled">
-            <li class="mb-2">SCO:315-316, Top floor, 35B, Himalaya Marg, Sector 35B, Chandigarh, 160035</li>
-            <li class="mb-2"><a class="text-color mr-3" href="tel:+911722601648">+91 172 2601648</a></li>
-            <li class="mb-2"><a class="text-color mr-3" href="tel:+911722612669">+91 172 2612669</a></li>
-            <li class="mb-2"><a class="text-color mr-3" href="tel:+919814888119">+91 9814888119</a></li>
-            <li class="mb-2"><a class="text-color mr-3" href="mailto:rcedindia@gmail.com">rcedindia@gmail.com</a></li>
-          </ul>
-        </div>
-    </div>
-  </div>
-  <!-- copyright -->
-  <div class="copyright py-4 bg-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-7 text-sm-left text-center">
-          <p class="mb-0">Copyright &copy;
-            <script>
-              var CurrentYear = new Date().getFullYear()
-              document.write(CurrentYear)
-            </script>
-          </p>
-        </div>
-        <div class="col-sm-5 text-sm-right text-center">
-          <ul class="list-inline">
-            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://www.facebook.com/rced.india"><i class="ti-facebook"></i></a></li>
-            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://twitter.com/intent/tweet?text=Contact%20%E2%80%93%20RCED&url=https%3A%2F%2Frcedindia.com%2Fcontact%2F%23.Y2X-9ISTMXh.twitter&related="><i class="ti-twitter-alt"></i></a></li>
-            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="https://instagram.com/rcedindia?igshid=YmMyMTA2M2Y="><i class="ti-instagram"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-<footer>
 
   <!-- footer content -->
   <div class="footer bg-footer section border-bottom ">

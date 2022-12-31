@@ -31,5 +31,10 @@ urlpatterns = [
     path('back/', views.back, name = "back"),
     path('upload/<int:id>/', views.upload, name = 'upload'),
     path('home/', views.home, name="home"),
+    path('attend/<int:id>/', views.attendance, name='attend'),
+    path('markattend/<int:id>/', views.markattend, name='markattend'),
+    path('grades/<int:id>/', views.grades, name='grades'),
+    path('markgrades/<int:id>/', views.markgrades, name='markgrades'),
+    path('downloadcoursecsv/<int:id>/', views.downloadcoursecsv, name='downloadcoursecsv'),
 
 ]
