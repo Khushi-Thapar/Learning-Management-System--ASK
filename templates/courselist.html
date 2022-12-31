@@ -154,7 +154,7 @@
         <th scope="col">Start Date</th>
         <th scope="col">End Date</th>
         <th scope="col">Delete Courses</th>
-        <th scope="col">Upload</th>
+        <th scope="col">Access</th>
         <th scope="col">Attendance</th>
         <th scope="col">Grades</th>
         <th scope="col">Notices</th>
@@ -171,8 +171,8 @@
       <td>{{ course.end_date }}</td>
       <td><a href="{% url 'delete1' course.id %}">delete</a></td>
       <td><a href="{{ course.link }}">Access Course</a></td>
-      <td><a href="{%url 'attend' course.id%}">Mark/View Attendance</a></td>
-      <td><a href="{%url 'grades' course.id%}">Mark/View Grades</a></td>
+      <td><a href="{%url 'attend' course.id%}">Mark Attendance</a></td>
+      <td><a href="{%url 'grades' course.id%}">Mark Grades</a></td>
       <td><a href="{% url 'pushednotices' course.id %}">View Notices</a></td>
       <td><a href="{% url 'downloadcoursecsv' course.id %}">Student Data</a></td>
       </tr>
