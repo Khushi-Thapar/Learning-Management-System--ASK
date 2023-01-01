@@ -55,7 +55,8 @@ def back(request, id):
 def viewnotices(request, id):
     notices = Notices.objects.filter(course_id = id)
     c = Course.objects.get(id = id)
-    cid = c.course_id    cvar = Childern.objects.get(course=id)
+    cid = c.course_id
+    cvar = Childern.objects.get(course=id)
     context = {}
     context.update({'cvar': cvar})
     context.update({'notices':notices})
