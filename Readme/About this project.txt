@@ -4,3 +4,5 @@ The website consistes of two modules:
 2. Student- The student here can access the course material, view notices assciated with course and change password. 
 
 The website has made use of Django as the backend framework and Sqlite as database.
+
+Demo Video: https://www.youtube.com/watch?v=rd567Ez6AL8
