@@ -40,5 +40,6 @@ urlpatterns = [
     path('home/', include("main.urls")),
     path('stuhome/<int:id>', views.stuhome, name = "stuhome"),
     path('notification/', include("main.urls")),
-
+    path('upload1/', include("main.urls")),
+    path('uploadfile/', include("main.urls")),
 ]

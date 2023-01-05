@@ -8,7 +8,10 @@ from .models import Course
 from .models import Admin
 from django.http import HttpResponse
 import csv
+import pandas as pd
 from .models import Notices
+import openpyxl
+
 # Create your views here.
 
 
@@ -50,6 +53,39 @@ def newstu(request):
         data = Childern(course = c, name=name, dob=dob, email=email, pas = pas, mobile = mob, add = ad)
         data.save()
     return render(request, 'Admin-home.html')
+
+
+from .forms import UploadFileForm
+def upload1(request, id):
+    cvar = Course.objects.get(id=id)
+    return render(request, 'uploadfile.html', {'cvar':cvar})
+
+def uploadfile(request, id):
+    df = request.FILES['uploadedfile']
+    wb = openpyxl.load_workbook(df)
+    worksheet = wb["Sheet1"]
+    excel_data = list()
+    for row in worksheet.iter_rows():
+        row_data = list()
+        for cell in row:
+            row_data.append(str(cell.value))
+        excel_data.append(row_data)
+    df = pd.DataFrame(excel_data,columns=['Name', 'DOB', 'mail', 'mobile', 'address'])
+    rows = df.shape[0]
+    for i in range(rows):
+        name = df.at[i, 'Name']
+        dob = df.at[i, 'DOB']
+        email = df.at[i, 'mail']
+        mobile = df.at[i, 'mobile']
+        addr = df.at[i,'address']
+        c = Course.objects.get(id=id)
+        name4 = name[0:4]
+        yob = dob[0:4]
+        pas = name4 + str(yob)
+        data = Childern(course=c, name=name, dob=dob, email=email, pas=pas, mobile=mobile, add=addr)
+        data.save()
+    stu_list = Childern.objects.all()
+    return render(request, 'studentlist.html', {'stu_list': stu_list})
 
 def changestd(request):
     if request.method == "POST":

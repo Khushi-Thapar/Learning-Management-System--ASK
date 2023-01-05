@@ -159,6 +159,7 @@
         <th scope="col">Grades</th>
         <th scope="col">Notices</th>
         <th scope="col">Student Data</th>
+        <th scope = "col">Bulk Upload Data</th>
       </tr>
     </thead>
     <tbody>
@@ -175,6 +176,7 @@
       <td><a href="{%url 'grades' course.id%}">Mark Grades</a></td>
       <td><a href="{% url 'pushednotices' course.id %}">View Notices</a></td>
       <td><a href="{% url 'downloadcoursecsv' course.id %}">Student Data</a></td>
+      <td><a href="{% url 'upload1' course.id %}">Upload Excel File</a></td>
       </tr>
     {% endfor %}
     </tbody>

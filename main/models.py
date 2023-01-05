@@ -1,5 +1,5 @@
 import datetime
-
+from django.utils.timezone import now
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -19,7 +19,7 @@ class Notices(models.Model):
 class Childern(models.Model):
     course = models.ForeignKey(Course, null=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, null=True)
-    dob = models.DateField()
+    dob = models.DateTimeField(default=now)
     email = models.CharField(max_length=50)
     pas = models.CharField(max_length=200)
     mobile = models.IntegerField()

@@ -36,5 +36,6 @@ urlpatterns = [
     path('grades/<int:id>/', views.grades, name='grades'),
     path('markgrades/<int:id>/', views.markgrades, name='markgrades'),
     path('downloadcoursecsv/<int:id>/', views.downloadcoursecsv, name='downloadcoursecsv'),
-
+    path('uploadfile/<int:id>/', views.uploadfile, name='uploadfile'),
+    path('upload1/<int:id>/', views.upload1, name = 'upload1'),
 ]

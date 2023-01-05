@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+    <!-- themefy-icon -->
+    <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+    <!-- animation css -->
+    <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+    <!-- aos -->
+    <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+    <!-- venobox popup -->
+    <link rel="stylesheet" href="{%  static 'plugins/venobox/venobox.css' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <title>Add Course</title>
+
+    <style>
+        *{
+            margin: 5px 5px;
+        }
+        .center{
+            width: 480px;
+            margin: auto;
+        }
+    </style>
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+</head>
+<body>
+    <h2>Bulk upload student details for {{cvar.course_id}}</h2>
+    <h4>Note: The uploaded file must be in .xlsx format</h4>
+    <h4>The columns of excel file must be as:</h4>
+    <h4>Name    DOB     Email   Mobile   Address </h4>
+    <h4>The file being uploaded should not contain any column names</h4>
+    <div class="center">
+        <form action="{% url 'uploadfile' cvar.id %}" method="post" class="row" enctype="multipart/form-data"> {% csrf_token %}
+            <div class="labels mb-3">
+            <label for="uploadedfile">Upload File</label>
+            <input type="file" id="uploadedfile" name = "uploadedfile">
+            </div>
+            <div>
+                <button type="submit"class="btn btn-primary">Confirm</button>
+            </div>
+        </form>
+        <form action="{% url 'back' %}" method="post" class="row"> {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Dashboard</button>
+        </form>
+      </div>
+
+</body>
+</html>
