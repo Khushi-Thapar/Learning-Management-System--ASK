@@ -1,4 +1,4 @@
-# Learning-Mnanagement-System--ASK
+# Learning-Management-System--ASK
 
 Learning Management System is a live project created for an education based NGO, named Regional centre for entrepreneurship and development (RCED).
 The website consists of two modules:
